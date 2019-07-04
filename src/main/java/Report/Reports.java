@@ -10,7 +10,7 @@ public class Reports {
         System.out.println(str);
 
         try{
-            File file = new File("C:/Users/aberkin/IdeaProjects/appiumGo/report.txt");
+            File file = new File("C:/Users/geatalay/Desktop/RobotTestJava/report.txt");
             FileWriter writer = new FileWriter(file,true);
             BufferedWriter bw = new BufferedWriter(writer);
             bw.append(str);
