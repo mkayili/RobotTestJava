@@ -6,11 +6,17 @@ public class CrashDetector {
     }
 
     void open() {
-        try {
-            Process p = Runtime.getRuntime().exec("adb logcat | grep FATAL\n");
-            p.waitFor();
-        } catch (Exception e) {
-            System.out.println("Crash detector başlatılamadı.");
-        }
+        new Thread() {
+            public void run() {
+
+                try {
+                    Process p = Runtime.getRuntime().exec("adb logcat | grep FATAL\n");
+                    p.waitFor();
+                    System.out.println(p.getOutputStream());
+                } catch (Exception e) {
+                    System.out.println("Çağrı simulasyonu başlatılamadı. Adb ve/veya Emulator ayarlarınızı kontrol ediniz");
+                }
+            }
+        }.start();
     }
 }
