@@ -15,10 +15,11 @@ public class Login {
     }
 
     public void userLoginProcess() {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 
         //Report.Reports.report("OK", "Login Page", "Uygulamanın açılması "+(endTime-startTime) + "sürdü ...");
         try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             MobileElement username = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.EditText");
             username.click();
             username.sendKeys("TEST90001336");

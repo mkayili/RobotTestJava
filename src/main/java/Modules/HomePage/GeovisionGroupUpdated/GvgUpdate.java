@@ -69,7 +69,7 @@ public class GvgUpdate {
                 /*for(int i = 0; i < elements.size(); i++) {
                     System.out.println(elements.get(i).toString());
                 }*/
-                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 //WebDriver webDriver = new We
                 //MobileElement scroll = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
 
@@ -79,13 +79,218 @@ public class GvgUpdate {
                 action.release();
                 action.perform();*/
 
-                JavascriptExecutor js = (JavascriptExecutor) driver;
+                /*JavascriptExecutor js = (JavascriptExecutor) driver;
                 HashMap<String, String> scrollObject = new HashMap<String, String>();
                 scrollObject.put("direction", "down");
-                js.executeScript("mobile: scroll", scrollObject);
+                js.executeScript("mobile: scroll", scrollObject);*/
 
 
                 //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView
+
+                KisiSec("willBeClosed",3);
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View[1]/android.view.View/android.widget.TextView");
+                    el4.click();
+                    Reports.report("OK","Info","Info butonu bulundu tıklandı...");
+                }catch (NoSuchElementException e) {
+                    Reports.report("NoElement","Info","Info butonu bulunamadı...");
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View");
+                    el5.click();        //Icerdeki info OK buton
+
+                    Reports.report("OK","Info","OK butonu bulundu tıklandı...");
+                }catch (NoSuchElementException e) {
+                    Reports.report("NoElement","Info","OK butonu bulunamadı...");
+                }
+
+                /*try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement gitButonu = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.view.View[2]");
+                    gitButonu.click();//Git butonu
+
+
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement googlemapKapat = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.view.View/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout[2]/android.widget.TextView");
+                    googlemapKapat.click();//Kapat butonu
+                }catch (NoSuchElementException e) {
+
+                }*/
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement continueButonu = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View[1]/android.view.View/android.view.View[3]/android.view.View[1]");
+                    continueButonu.click();//Continue butonu                                         /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.view.View[1]
+
+
+
+                }catch (NoSuchElementException e) {
+
+                }
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement silinsinmiYes = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[3]");
+                    silinsinmiYes.click();
+
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement warningOk = (MobileElement) driver.findElementById("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button");
+                    warningOk.click();
+
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement silinsinmiNo = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[4]");
+                    silinsinmiNo.click();
+
+
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement fotoEkleme = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[3]");
+                    fotoEkleme.click();
+
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement fotoCekme = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]");
+                    fotoCekme.click();
+
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement fotoSilme = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]");
+                    fotoSilme.click();
+
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement fotoCekme = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]");
+                    fotoCekme.click();
+
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement fotoKabul = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]");
+                    fotoKabul.click();
+
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement fotoCekme = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]");
+                    fotoCekme.click();
+
+                }catch (NoSuchElementException e) {
+
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement fotoKabul = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]");
+                    fotoKabul.click();
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement fotolarOnay = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]");
+                    fotolarOnay.click();
+
+                }catch (NoSuchElementException e) {
+
+                }
+                /*
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el20 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[4]/android.view.View");
+                    el20.click();
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el21 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[3]");
+                    el21.click();
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el22 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]");
+                    el22.click();
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el23 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]");
+                    el23.click();
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el24 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]");
+                    el24.click();
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el25 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[4]/android.view.View");
+                    el25.click();
+                }catch (NoSuchElementException e) {
+
+                }
+
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el26 = (MobileElement) driver.findElementById("android:id/button1");
+                    el26.click();
+                }catch (NoSuchElementException e) {
+
+                }*/
 
 
 
@@ -109,7 +314,6 @@ public class GvgUpdate {
             Reports.report("NoElement", "GvgUpdate", "Information Update butonu ekranda mevcut değil...");
         }
     }
-
 
     public void dublicateOutlets() {
         try{
@@ -188,7 +392,7 @@ public class GvgUpdate {
                 Reports.report("WrongText", "Info", "Beklenen mesaj alınamadı ...");
             }
         }catch (NoSuchElementException e){
-            Reports.report("NoElement", "Info", "There are no recommendations in this scenario. mesajı görülemedi ...");
+            Reports.report("NoElement", "Info", "There are no recommendations in this scenario. mesajı görülemedi...");
         }
     }
 
@@ -196,10 +400,58 @@ public class GvgUpdate {
 
     }
 
+    public void KisiSec(String page, int sira) {
+
+
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + sira +"]/android.view.View[1]/android.widget.TextView[2]");
+            el1.click();        //Listedeki ilk buton info
+            Reports.report("OK",page,"Info butonu bulundu tıklandı...");
+        }catch (NoSuchElementException e) {
+            Reports.report("NoElement",page,"Info butonu bulunamadı...");
+        }
+
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View");
+            el2.click();        //Info uyarı OK buton
+            Reports.report("OK","Info","OK butonu bulundu tıklandı...");
+        }catch (NoSuchElementException e) {
+            Reports.report("NoElement","Info","OK butonu bulunamadı...");
+        }
+
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ sira +"]/android.view.View[1]");
+            el3.click();        //Listedeki ilk buton
+            Reports.report("OK",page,"Bilgiler bulundu tıklandı...");
+        }catch (NoSuchElementException e) {
+            Reports.report("NoElement",page,"Bilgiler bulunamadı...");
+        }
+    }
+
     public String getInsideParanthesis(String str){
         String answer = str.substring(str.indexOf("(")+1,str.indexOf(")"));
         return answer;
     }
+    /*
+
+
+
+
+
+
+
+
+
+
+
+    */
     //konum bilgisi yetersiz-> tamam butonu /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button
     ///scroll(2)  hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View
+    //Warning /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout
+    //Info /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout
+    //Infotext /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView
+
 }
