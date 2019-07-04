@@ -12,6 +12,7 @@ public class CrashDetector {
                 try {
                     Process p = Runtime.getRuntime().exec("adb logcat | grep FATAL\n");
                     p.waitFor();
+                    System.out.println(p.getOutputStream());
                 } catch (Exception e) {
                     System.out.println("Çağrı simulasyonu başlatılamadı. Adb ve/veya Emulator ayarlarınızı kontrol ediniz");
                 }
