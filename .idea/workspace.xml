@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e11307d-6a35-4e14-a405-c712433f23a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaitingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/buttonCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaiting_hepsi/approveAwaiting_hepsi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaiting_master/approveAwaiting_master.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaiting_müsteri/approveAwaiting_müsteri.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPointsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPoints_hepsi/approvedPoints_hepsi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPoints_master/approvedPoints_master.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPoints_müsteri/approvedPoints_müsteri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Report/Reports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Report/Reports.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/appiumTestGo.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Report/Reports.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Report/Reports.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/appiumTestGo.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaitingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaitingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/SideBar/buttonCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/SideBar/buttonCheck.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,42 +30,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/DriverController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/initTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Report/Reports.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Modules/HomePage/GeovisionGroupUpdated/GvgUpdate.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1105">
@@ -75,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/buttonCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="38" column="26" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="26" />
+            <state relative-caret-position="312">
+              <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#595#596#0" expanded="true" />
@@ -89,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedTest.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPointsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#330#331#0" expanded="true" />
@@ -104,10 +70,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaitingTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPoints_hepsi/approvedPoints_hepsi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+            <state relative-caret-position="34">
+              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPoints_master/approvedPoints_master.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPoints_müsteri/approvedPoints_müsteri.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaitingTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#237#238#0" expanded="true" />
@@ -118,10 +111,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/LoginPage/Login.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaiting_hepsi/approveAwaiting_hepsi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="34">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaiting_master/approveAwaiting_master.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaiting_müsteri/approveAwaiting_müsteri.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -167,9 +178,11 @@
         <option value="$PROJECT_DIR$/src/main/java/Modules/HomePage/GeovisionGroupUpdated/GvgUpdate.java" />
         <option value="$PROJECT_DIR$/src/main/java/Modules/LoginPage/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/Report/Reports.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Modules/SideBar/buttonCheck.java" />
         <option value="$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaitingTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Modules/SideBar/buttonCheck.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaitingTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedTest.java" />
       </list>
     </option>
   </component>
@@ -245,6 +258,59 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Modules" type="462c0819:PsiDirectoryNode" />
               <item name="SideBar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appiumTestGo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RobotTestJava" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="SideBar" type="462c0819:PsiDirectoryNode" />
+              <item name="approveAwaiting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appiumTestGo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RobotTestJava" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="SideBar" type="462c0819:PsiDirectoryNode" />
+              <item name="approvedPoints" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appiumTestGo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RobotTestJava" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="SideBar" type="462c0819:PsiDirectoryNode" />
+              <item name="approvedPoints" type="462c0819:PsiDirectoryNode" />
+              <item name="approvedPoints_hepsi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appiumTestGo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RobotTestJava" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="SideBar" type="462c0819:PsiDirectoryNode" />
+              <item name="approvedPoints" type="462c0819:PsiDirectoryNode" />
+              <item name="approvedPoints_master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appiumTestGo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RobotTestJava" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="SideBar" type="462c0819:PsiDirectoryNode" />
+              <item name="approvedPoints" type="462c0819:PsiDirectoryNode" />
+              <item name="approvedPoints_müsteri" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appiumTestGo" type="b2602c69:ProjectViewProjectNode" />
@@ -335,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562232461322</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Proje test metodlarına ayrıldı">
+      <created>1562240069197</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562240069197</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -349,9 +422,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19932885" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2536913" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -359,16 +431,16 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.46972176" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.4688385" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3927987" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.13597734" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.16713881" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49932885" weight="0.16713881" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -466,22 +538,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/buttonCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="312">
+          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#330#331#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaitingTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaitingTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#237#238#0" expanded="true" />
@@ -490,14 +562,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/buttonCheck.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaiting_hepsi/approveAwaiting_hepsi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="26" />
+        <state relative-caret-position="34">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaiting_master/approveAwaiting_master.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approveAwaiting/approveAwaiting_müsteri/approveAwaiting_müsteri.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPoints_hepsi/approvedPoints_hepsi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPoints_master/approvedPoints_master.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPoints_müsteri/approvedPoints_müsteri.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modules/SideBar/approvedPoints/approvedPointsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
           </folding>
         </state>
       </provider>

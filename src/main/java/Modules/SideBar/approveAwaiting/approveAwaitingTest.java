@@ -1,4 +1,4 @@
-package Modules.SideBar;
+package Modules.SideBar.approveAwaiting;
 
 import Report.Reports;
 import io.appium.java_client.MobileElement;

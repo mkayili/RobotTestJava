@@ -36,7 +36,7 @@ public class buttonCheck {
             MobileElement faq = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[8]/android.widget.TextView[2]\n");
             MobileElement clear = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[9]/android.widget.TextView[2]\n");
             //approveAwaitingTest();
-            //approvedTest();
+            //approvedPointsTest();
             //rejectedTest();
             //searchTest();
         } catch (NoSuchElementException e) {
