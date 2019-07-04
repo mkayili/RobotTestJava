@@ -1,17 +1,15 @@
-import io.appium.java_client.MobileElement;
+package Utils;
+
+import Report.Reports;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
-import org.junit.Before;
-import org.junit.Test;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class DriverController {
     private AndroidDriver driver;
-    public Main() {
+
+    public DriverController() {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("deviceName", "Nexus_S_API_22");
         desiredCapabilities.setCapability("udid", "emulator-5554");
@@ -32,14 +30,9 @@ public class Main {
         //driver = new AndroidDriver(remoteUrl, desiredCapabilities);
 
     }
-    public AndroidDriver getDriver(){
+
+    public AndroidDriver getAndroidDriver() {
         return driver;
     }
 
-    public static void main(String[] args) {
-        Main deneme = new Main();
-        Operations op = new Operations(deneme.getDriver());
-        op.userLoginProcess();
-        op.gvgUpdated();
-    }
 }
