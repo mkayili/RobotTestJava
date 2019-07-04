@@ -1,20 +1,35 @@
 package Utils;
 
+import java.io.InputStream;
+
 public class CrashDetector {
-    public CrashDetector() {
-        open();
+    public CrashDetector(boolean detect) {
+        if (detect)
+            open();
     }
 
     void open() {
         new Thread() {
             public void run() {
+                System.out.println("Crash Detector starting...");
 
                 try {
-                    Process p = Runtime.getRuntime().exec("adb logcat | grep FATAL\n");
-                    p.waitFor();
-                    System.out.println(p.getOutputStream());
+                    ProcessBuilder ps = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe", "-c", "adb logcat | grep FATAL\n");
+
+                    ps.redirectErrorStream(true);
+
+                    Process pr = ps.start();
+
+                    InputStream in = pr.getErrorStream();
+                    for (int i = 0; i < in.available(); i++) {
+                        System.out.println("" + in.read());
+                    }
+
+                    pr.waitFor();
+
+
                 } catch (Exception e) {
-                    System.out.println("Çağrı simulasyonu başlatılamadı. Adb ve/veya Emulator ayarlarınızı kontrol ediniz");
+                    System.out.println("Çağrı simulasyonu başlatılamadı. gitbash.exe veya Adb ve/veya Emulator ayarlarınızı kontrol ediniz");
                 }
             }
         }.start();
