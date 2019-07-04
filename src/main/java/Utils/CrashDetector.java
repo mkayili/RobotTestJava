@@ -29,7 +29,7 @@ public class CrashDetector {
 
 
                 } catch (Exception e) {
-                    System.out.println("Çağrı simulasyonu başlatılamadı. gitbash.exe veya Adb ve/veya Emulator ayarlarınızı kontrol ediniz");
+                    System.out.println("Crash detector başlatılamadı. gitbash.exe veya Adb ve/veya Emulator ayarlarınızı kontrol ediniz");
                 }
             }
         }.start();
