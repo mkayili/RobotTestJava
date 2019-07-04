@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e11307d-6a35-4e14-a405-c712433f23a3" name="Default Changelist" comment="Classlara ayrıldı">
+    <list default="true" id="8e11307d-6a35-4e14-a405-c712433f23a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/HomePage/GeovisionGroupUpdated/GvgUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Reports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Report/Reports.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Operations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Reports.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/HomePage/GeovisionGroupUpdated/GvgUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/HomePage/GeovisionGroupUpdated/GvgUpdate.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Utils/DriverController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,12 +58,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Modules/HomePage/GeovisionGroupUpdated/GvgUpdate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21">
-              <caret line="63" column="52" lean-forward="true" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+            <state relative-caret-position="272">
+              <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#524#525#0" expanded="true" />
                 <element signature="e#560#561#0" expanded="true" />
+                <element signature="e#5127#5143#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -256,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562061636378</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Proje test metodlarına ayrıldı">
+      <created>1562232461321</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562232461322</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -280,7 +283,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.46972176" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3927987" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3927987" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -329,7 +332,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="asdas" />
-    <option name="LAST_COMMIT_MESSAGE" value="asdas" />
+    <MESSAGE value="Proje test metodlarına ayrıldı" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proje test metodlarına ayrıldı" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar!/org/openqa/selenium/remote/RemoteWebElement.class">
@@ -380,7 +385,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/DriverController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -399,12 +404,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Modules/HomePage/GeovisionGroupUpdated/GvgUpdate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="63" column="52" lean-forward="true" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+        <state relative-caret-position="272">
+          <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#524#525#0" expanded="true" />
             <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#5127#5143#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -3,10 +3,13 @@ package Modules.HomePage.GeovisionGroupUpdated;
 import Report.Reports;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.MultiTouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -70,11 +73,20 @@ public class GvgUpdate {
                 //WebDriver webDriver = new We
                 //MobileElement scroll = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
 
-                TouchAction action = new TouchAction(driver);
+                /*TouchAction action = new TouchAction(driver);
                 action.press(PointOption.point(50, 500));
                 action.moveTo(PointOption.point(50, 400));
                 action.release();
-                action.perform();
+                action.perform();*/
+
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                HashMap<String, String> scrollObject = new HashMap<String, String>();
+                scrollObject.put("direction", "down");
+                js.executeScript("mobile: scroll", scrollObject);
+
+
+                //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView
+
 
 
             }
