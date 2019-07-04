@@ -3,6 +3,7 @@ package Report;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.UUID;
 
 public class Reports {
     public static void report(String status, String page, String messsage){
@@ -10,7 +11,8 @@ public class Reports {
         System.out.println(str);
 
         try{
-            File file = new File("C:/Users/geatalay/Desktop/RobotTestJava/report.txt");
+            File file = new File("report"+"-" + UUID.randomUUID().toString()+".txt");
+            file.createNewFile();
             FileWriter writer = new FileWriter(file,true);
             BufferedWriter bw = new BufferedWriter(writer);
             bw.append(str);
