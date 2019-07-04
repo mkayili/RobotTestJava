@@ -6,6 +6,7 @@ import Utils.DriverController;
 public class initTests {
 
     public static void main(String[] args) {
+        new CrashDetector(true);
         DriverController drv = new DriverController();
         Login login = new Login(drv.getAndroidDriver());
         GvgUpdate update = new GvgUpdate(drv.getAndroidDriver());
