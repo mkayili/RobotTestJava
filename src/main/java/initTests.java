@@ -1,4 +1,4 @@
-import Modules.HomePage.GeovisionGroupUpdated.GvgUpdate;
+import Modules.HomePage.GeovisionGroupUpdated.geovisionGroupUpdated;
 import Modules.LoginPage.Login;
 import Modules.SideBar.SideBar;
 import Utils.CrashDetector;
@@ -11,11 +11,11 @@ public class initTests {
         new CrashDetector(true);
         DriverController drv = new DriverController();
         Login login = new Login(drv.getAndroidDriver());
-        GvgUpdate update = new GvgUpdate(drv.getAndroidDriver());
-        SideBar bar = new SideBar(drv.getAndroidDriver());
+        geovisionGroupUpdated update = new geovisionGroupUpdated(drv.getAndroidDriver());
+        //SideBar bar = new SideBar(drv.getAndroidDriver());
         login.userLoginProcess();
-        bar.testMenu();
-        //update.gvgUpdated();
+        //bar.openMenu();
+        update.gvgUpdated();
 
 
     }
