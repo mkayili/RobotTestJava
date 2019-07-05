@@ -70,7 +70,7 @@ public class SideBar {
             //Rejected.test();
             //search.test();
             //logout.logOutProcess();
-            support.test();
+            //support.test();
 
         } catch (NoSuchElementException e) {
             Reports.report("FAIL", "sideBar", "Bir test failladı");
