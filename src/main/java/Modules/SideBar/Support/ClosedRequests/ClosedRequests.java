@@ -26,14 +26,11 @@ public class ClosedRequests {
             textViews.get(2).click();
             swipe();
             str = textViews.get(4).getText();
-            System.out.println("string = " + str);
 
             if(str.equals("")){
                 Reports.report("FAIL", "ClosedRequests list", "ClosedRequests list is Empty");
             }
             Reports.report("OK", "aClosedRequests test", "Düzgün çalışıyor");
-            MobileElement backButton = (MobileElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\" \"]/android.view.View/android.widget.ImageView\n");
-            backButton.click();
         } catch (Exception e) {
             Reports.report("FAIL", "ClosedRequests test", "SUPPORT_ClosedRequests failed...");
         }
