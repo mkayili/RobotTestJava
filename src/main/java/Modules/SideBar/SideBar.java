@@ -3,6 +3,7 @@ package Modules.SideBar;
 import Modules.SideBar.Logout.Logout;
 import Modules.SideBar.Rejected.RejectedTest;
 import Modules.SideBar.Search.Search;
+import Modules.SideBar.Support.Support;
 import Report.Reports;
 import Modules.SideBar.approveAwaiting.*;
 import Modules.SideBar.approvedPoints.*;
@@ -61,14 +62,15 @@ public class SideBar {
             approvedPointsTest approvedPoints = new approvedPointsTest(driver);
             RejectedTest Rejected = new RejectedTest(driver);
             Search search = new Search(driver);
+            Support support = new Support(driver);
             Logout logout = new Logout(driver);
             buttonTest();
             //approveAwaiting.test();
             //approvedPoints.test();
             //Rejected.test();
-            search.test();
+            //search.test();
             //logout.logOutProcess();
-
+            support.test();
 
         } catch (NoSuchElementException e) {
             Reports.report("FAIL", "sideBar", "Bir test failladı");
