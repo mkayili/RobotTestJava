@@ -8,11 +8,13 @@ import io.appium.java_client.TouchAction;
 import io.appium.java_client.MultiTouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -189,18 +191,35 @@ public class geovisionGroupUpdated {
         }
     }
 
-    public void ListeyiSay() {
-        List<String> liste = new ArrayList<String>();
-        for(int i=1;;++i) {
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View[1]");
-            if(el3.isDisplayed()) {
-                //liste.add(el3.get);
-            }
-            else{
-                break;
+    public int ListeyiSay() {
+        HashSet<String> liste = new HashSet<String>();
+        int i;
+        for(i=1;;++i) {
+            try {
+                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + i + "]/android.view.View[1]/android.widget.TextView[1]");
+                if (el3.isDisplayed()) {
+                    liste.add(el3.getText());
+                }
+            }catch (NoSuchElementException e) {
+                Reports.report("Liste alınıyor","List","scroll yapılacak");
+                try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + i + "]");
+                    MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + i + "]/android.view.View/android.widget.TextView[1]");
+                    liste.add(el2.getText());
+                    return liste.size();
+                }catch (NoSuchElementException x) {
+                    Dimension size = driver.manage().window().getSize();
+                    int width = (int)size.getWidth()/2;
+                    int startPoint = (int)(size.getHeight()*0.8);
+                    int endPoint = (int)(size.getHeight()*0.2);
+                    new TouchAction(driver).press(PointOption.point(width, startPoint)).waitAction().moveTo(PointOption.point(width, endPoint)).release().perform();
+                }
+
             }
         }
+
 
     }
 

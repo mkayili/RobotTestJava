@@ -36,6 +36,7 @@ public class willBeClosed extends geovisionGroupUpdated {
                 int count = Integer.parseInt(willbeClosedText.getText());
                 //System.out.println(count);
                 willbeClosedButton.click();
+                Reports.report("OK","geovisionGroupUpdated","Will Be Closed butonu ekranda mevcut. Butona tıklandı ...");
                 try{
                     TimeUnit.SECONDS.sleep(2);
 
@@ -55,24 +56,13 @@ public class willBeClosed extends geovisionGroupUpdated {
                 //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 //WebDriver webDriver = new We
                 //MobileElement scroll = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
-                Dimension size = driver.manage().window().getSize();
+                /*Dimension size = driver.manage().window().getSize();
                 int width = (int)size.getWidth()/2;
                 int startPoint = (int)(size.getHeight()*0.8);
                 int endPoint = (int)(size.getHeight()*0.2);
-                new TouchAction(driver).press(PointOption.point(width, startPoint)).waitAction().moveTo(PointOption.point(width, endPoint)).release().perform();
+                new TouchAction(driver).press(PointOption.point(width, startPoint)).waitAction().moveTo(PointOption.point(width, endPoint)).release().perform();*/
 
-                /*TouchAction action = new TouchAction(driver);
-                action.press(PointOption.point(50, 500));
-                action.moveTo(PointOption.point(50, 480));
-                action.release();
-                action.perform();*/
-
-                /*JavascriptExecutor js = (JavascriptExecutor) driver;
-                HashMap<String, String> scrollObject = new HashMap<String, String>();
-                scrollObject.put("direction", "down");
-                js.executeScript("mobile: scroll", scrollObject);*/
-
-
+                System.out.println(ListeyiSay());
                 //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView
 
                 /*KisiSec("willBeClosed",1);
