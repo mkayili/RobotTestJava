@@ -22,7 +22,7 @@ public class Login {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             MobileElement username = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.EditText");
             username.click();
-            username.sendKeys("TEST90001336");
+            username.sendKeys("TEST90016932");
             driver.hideKeyboard();
             Reports.report("OK", "Login Page",
                     "Username metin alanı ekranda mevcut.İlgili metin girildi ve klavye kapatıldı...");

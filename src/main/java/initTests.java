@@ -14,7 +14,7 @@ public class initTests {
         GvgUpdate update = new GvgUpdate(drv.getAndroidDriver());
         SideBar bar = new SideBar(drv.getAndroidDriver());
         login.userLoginProcess();
-        bar.openMenu();
+        bar.testMenu();
         //update.gvgUpdated();
 
 

@@ -1,5 +1,6 @@
-package Modules.HomePage.SideBar;
+package Modules.SideBar.ClearData;
 
+import Modules.SideBar.Logout.Logout;
 import Report.Reports;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -10,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ClearData {
     private AndroidDriver driver;
-    private SideBarLogOut sideBarLogOut;
+    private Logout logout;
 
     public ClearData(AndroidDriver driver) {
         this.driver = driver;

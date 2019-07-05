@@ -1,4 +1,4 @@
-package Modules.HomePage.SideBar;
+package Modules.SideBar.Logout;
 
 import Report.Reports;
 import io.appium.java_client.MobileElement;
@@ -10,19 +10,14 @@ import org.openqa.selenium.NoSuchElementException;
 
 import java.util.concurrent.TimeUnit;
 
-public class SideBarLogOut {
+public class Logout {
     private AndroidDriver driver;
 
-    public SideBarLogOut(AndroidDriver driver) {
+    public Logout(AndroidDriver driver) {
         this.driver = driver;
     }
 
     public void logOutProcess() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-        try {
-            MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.widget.TextView");
-            el3.click();
-
             try {
                 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
                 TouchAction action = new TouchAction(driver);
@@ -46,13 +41,9 @@ public class SideBarLogOut {
             el4.click();
             Reports.report("OK", "Login Page",
                     "Logout butonuna tıklanarak çıkış yapıldı.");
-
-        } catch (NoSuchElementException e) {
-            Reports.report("NoElement", "Login Page",
-                    "Logout butonu bulunamadı.");
         }
 
-    }
-
 }
+
+
 

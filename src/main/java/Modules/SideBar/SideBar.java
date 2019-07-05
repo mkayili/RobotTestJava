@@ -1,10 +1,11 @@
 package Modules.SideBar;
 
+import Modules.SideBar.Logout.Logout;
 import Modules.SideBar.Rejected.RejectedTest;
+import Modules.SideBar.Search.Search;
 import Report.Reports;
 import Modules.SideBar.approveAwaiting.*;
 import Modules.SideBar.approvedPoints.*;
-import Modules.SideBar.Rejected.*;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.NoSuchElementException;
@@ -19,7 +20,7 @@ public class SideBar {
     }
 
 
-    public void openMenu() {
+    public void testMenu() throws InterruptedException{
         try {
             driver.manage().timeouts().implicitlyWait(175, TimeUnit.SECONDS);
             MobileElement menubutton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.widget.TextView\n");
@@ -36,7 +37,7 @@ public class SideBar {
     private void buttonTest(){
         try {
 
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             MobileElement approvesAwaiting = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.widget.TextView[2]\n");
             MobileElement approvedPoints = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.TextView[2]\n");
             MobileElement rejected = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]/android.widget.TextView[2]\n");
@@ -54,15 +55,20 @@ public class SideBar {
     }
 
 
-    private void Initialize() {
+    public void Initialize()throws InterruptedException {
         try {
             approveAwaitingTest approveAwaiting = new approveAwaitingTest(driver);
             approvedPointsTest approvedPoints = new approvedPointsTest(driver);
             RejectedTest Rejected = new RejectedTest(driver);
+            Search search = new Search(driver);
+            Logout logout = new Logout(driver);
             buttonTest();
-            approveAwaiting.test();
-            approvedPoints.test();
-            Rejected.test();
+            //approveAwaiting.test();
+            //approvedPoints.test();
+            //Rejected.test();
+            search.test();
+            //logout.logOutProcess();
+
 
         } catch (NoSuchElementException e) {
             Reports.report("FAIL", "sideBar", "Bir test failladı");
