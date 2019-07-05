@@ -1,38 +1,32 @@
-package Modules.SideBar.approveAwaiting.approveAwaiting_müsteri;
-
+package Modules.SideBar.Rejected.Rejected_master;
 import Report.Reports;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class approveAwaiting_müsteri {
-
+public class Rejected_master {
     private AndroidDriver driver;
-
-    public approveAwaiting_müsteri(AndroidDriver driver) {
+    private int ht = 0;
+    public Rejected_master(AndroidDriver driver) {
         this.driver = driver;
     }
 
     public int check() {
-        int ht = 0;
         try {
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             List<MobileElement> textViews=driver.findElementsByXPath("//*[@class='android.widget.TextView']");
-            ht = getNumber(textViews.get(3).getText());
-            textViews.get(3).click();
+            ht = getNumber(textViews.get(2).getText());
+            textViews.get(2).click();
 
             // awaiting elemanlar�n�n say�s� kontrol edilecek
 
-            Reports.report("OK", "approveAwaiting_müsteri test", "Düzgün çalışıyor");
+            Reports.report("OK", "approveAwaiting_master test", "Düzgün çalışıyor");
         } catch (Exception e) {
-            Reports.report("Menu action Failed", "approveAwaiting_müsteri", "approveAwaiting_müsteri failed...");
+            Reports.report("Menu action Failed", "Rejected_master test", "Rejected_master failed...");
         }
         return ht;
     }
-
-
 
     public Integer getNumber(String str){
         int aa;
@@ -44,9 +38,4 @@ public class approveAwaiting_müsteri {
             return aa;
         }
     }
-
 }
-
-
-
-

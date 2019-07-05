@@ -1,14 +1,16 @@
 package Modules.SideBar.approveAwaiting.approveAwaiting_hepsi;
 
 import Report.Reports;
+import java.util.*;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 
 import java.util.concurrent.TimeUnit;
 
 public class approveAwaiting_hepsi {
     int aa = 0;
-    AndroidDriver driver;
+    private AndroidDriver driver;
 
     public approveAwaiting_hepsi(AndroidDriver driver) {
         this.driver = driver;
@@ -18,9 +20,11 @@ public class approveAwaiting_hepsi {
         int ht = 0;
         try {
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-            MobileElement hepsiTab = (MobileElement) driver.findElementByXPath("//android.view.View[@content-desc=\"HEPSİ (8)\"]/android.view.View/android.view.View/android.widget.TextView\n");
-            ht = Integer.parseInt(getInsideParanthesis(hepsiTab.getText()));
-            hepsiTab.click();
+
+            List<MobileElement> textViews=driver.findElementsByXPath("//*[@class='android.widget.TextView']");
+            ht = getNumber(textViews.get(1).getText());
+            textViews.get(1).click();
+
             // awaiting elemanlar�n�n say�s� kontrol edilecek
 
             Reports.report("OK", "approveAwaiting_hepsi test", "Düzgün çalışıyor");
@@ -30,9 +34,15 @@ public class approveAwaiting_hepsi {
         return ht;
     }
 
-    public String getInsideParanthesis(String str) {
-        String answer = str.substring(str.indexOf("(") + 1, str.indexOf(")"));
-        return answer;
+    public Integer getNumber(String str){
+        int aa ;
+        str = str.replaceAll("[^\\d.]", "");
+        if (str.length() == 0){
+            return 0;
+        }else{
+            aa = Integer.parseInt(str);
+            return aa;
+        }
     }
 
 }

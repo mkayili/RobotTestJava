@@ -1,4 +1,4 @@
-package Modules.SideBar.approveAwaiting.approveAwaiting_müsteri;
+package Modules.SideBar.Rejected.Rejected_müsteri;
 
 import Report.Reports;
 import io.appium.java_client.MobileElement;
@@ -7,11 +7,10 @@ import io.appium.java_client.android.AndroidDriver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class approveAwaiting_müsteri {
-
+public class Rejected_müsteri {
     private AndroidDriver driver;
 
-    public approveAwaiting_müsteri(AndroidDriver driver) {
+    public Rejected_müsteri(AndroidDriver driver) {
         this.driver = driver;
     }
 
@@ -27,15 +26,13 @@ public class approveAwaiting_müsteri {
 
             Reports.report("OK", "approveAwaiting_müsteri test", "Düzgün çalışıyor");
         } catch (Exception e) {
-            Reports.report("Menu action Failed", "approveAwaiting_müsteri", "approveAwaiting_müsteri failed...");
+            Reports.report("Menu action Failed", "Rejected_müsteri test", "Rejected_müsteri failed...");
         }
         return ht;
     }
 
-
-
     public Integer getNumber(String str){
-        int aa;
+        int aa ;
         str = str.replaceAll("[^\\d.]", "");
         if (str.length() == 0){
             return 0;
@@ -46,7 +43,3 @@ public class approveAwaiting_müsteri {
     }
 
 }
-
-
-
-
