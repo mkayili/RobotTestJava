@@ -6,6 +6,7 @@ import Report.Reports;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Support {
@@ -29,6 +30,12 @@ public class Support {
         }catch (Exception e){
             Reports.report("NoElement", "Support", "Support Test Failed...");
         }
+
+
+
+        List<MobileElement> textViews=driver.findElementsByXPath("//*[@class='android.widget.ImageView']");
+        MobileElement backButton = textViews.get(0);
+        backButton.click();
 
     }
 }

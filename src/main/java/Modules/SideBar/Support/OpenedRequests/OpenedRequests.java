@@ -31,8 +31,6 @@ import java.util.concurrent.TimeUnit;
                     Reports.report("FAIL", "OpenedRequests list", "OpenedRequests list is Empty");
                 }
                 Reports.report("OK", "OpenedRequests test", "Düzgün çalışıyor");
-                MobileElement backButton = (MobileElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\" \"]/android.view.View/android.widget.ImageView\n");
-                backButton.click();
             } catch (Exception e) {
                 Reports.report("FAIL", "OpenedRequests test", "SUPPORT_OpenedRequests failed...");
             }

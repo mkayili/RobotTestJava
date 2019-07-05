@@ -15,8 +15,8 @@ public class initTests {
         geovisionGroupUpdated update = new geovisionGroupUpdated(drv.getAndroidDriver());
         SideBar bar = new SideBar(drv.getAndroidDriver());
         login.userLoginProcess();
-        //bar.openMenu();
-        update.gvgUpdated();
+        bar.testMenu();
+        //update.gvgUpdated();
 
 
         ClearData clearData = new ClearData(drv.getAndroidDriver());
