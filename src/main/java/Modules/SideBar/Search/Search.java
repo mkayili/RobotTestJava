@@ -40,7 +40,9 @@ public class Search {
             } catch (Exception e) {
                 Reports.report("FAIL", "Search Test", "Search failed...");
             }
-            MobileElement backButton = (MobileElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\" \"]/android.view.View/android.widget.ImageView\n");
+
+            List<MobileElement> textViews=driver.findElementsByXPath("//*[@class='android.widget.ImageView']");
+            MobileElement backButton = textViews.get(0);
             backButton.click();
         }catch (Exception e1){
 

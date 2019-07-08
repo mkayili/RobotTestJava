@@ -1,6 +1,7 @@
 package Modules.SideBar.ClearData;
 
 import Modules.SideBar.Logout.Logout;
+import Modules.Progress.Progress;
 import Report.Reports;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
@@ -24,11 +25,11 @@ public class ClearData {
     public void clearAllDataButton() {
             swipeBar();
 
-            Reports.report("OK", "Login Page",
-                    "Sidebar menüde swipe işlemi yapıldı..");
+
             try {
                 MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[7]");
                 el4.click();
+
                 Reports.report("OK", "Home Page", "Clear All Datas butonuna tıklandı...");
             } catch (NoSuchElementException e) {
                 Reports.report("NoElement", "Home Page", "Clear All Datas butonu bulunamadı...");
@@ -60,6 +61,7 @@ public class ClearData {
             MobileElement el5 = (MobileElement) driver.findElementById("android:id/button1");
             el5.click();
 
+
             Reports.report("OK", "Home Page", "Pop-up çıktı ve CANCEL butonuna tıklandı...");
         } catch (NoSuchElementException e) {
             Reports.report("NoElement", "Home Page", "Pop-up ekrana gelmedi...");
@@ -67,7 +69,7 @@ public class ClearData {
     }
     public void swipeBar(){
         try {
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
             TouchAction action = new TouchAction(driver);
             PointOption p1 = new PointOption();
             Dimension dimensions = driver.manage().window().getSize();
@@ -76,6 +78,8 @@ public class ClearData {
             Double screenHeightEnd = dimensions.getHeight() * 0.59;
             int h2 = screenHeightEnd.intValue();
             action.press(p1.point(0, h1)).moveTo(p1.point(0, h2)).release().perform();
+            Reports.report("OK", "Login Page",
+                    "Sidebar menüde swipe işlemi yapıldı..");
         } catch (org.openqa.selenium.NoSuchElementException e) {
             Reports.report("NoElement", "Login Page",
                     "Sidebar menüde swipe işlemi yapılamadı..");

@@ -30,6 +30,19 @@ import java.util.concurrent.TimeUnit;
                 if(str.equals("")){
                     Reports.report("FAIL", "OpenedRequests list", "OpenedRequests list is Empty");
                 }
+
+
+                MobileElement listitem = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.support.v4.view.ViewPager/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.view.View");
+                listitem.click();
+                MobileElement sorunlarText= (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView");
+                if(sorunlarText.getText().equals("")){
+                    Reports.report("FAIL", "OpenedRequests list", "OpenedRequests - Noktayla ilgili sorunlar yazısı çıkmadı");
+                }
+                List<MobileElement> textViews1=driver.findElementsByXPath("//*[@class='android.widget.ImageView']");
+                MobileElement backButton = textViews1.get(0);
+                backButton.click();
+
+
                 Reports.report("OK", "OpenedRequests test", "Düzgün çalışıyor");
             } catch (Exception e) {
                 Reports.report("FAIL", "OpenedRequests test", "SUPPORT_OpenedRequests failed...");

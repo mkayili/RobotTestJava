@@ -21,7 +21,7 @@ public class Rejected_master {
 
             // awaiting elemanlar�n�n say�s� kontrol edilecek
 
-            Reports.report("OK", "approveAwaiting_master test", "Düzgün çalışıyor");
+            Reports.report("OK", "Rejected_master test", "Düzgün çalışıyor");
         } catch (Exception e) {
             Reports.report("Menu action Failed", "Rejected_master test", "Rejected_master failed...");
         }

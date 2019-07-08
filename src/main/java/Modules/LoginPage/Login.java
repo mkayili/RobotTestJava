@@ -46,12 +46,36 @@ public class Login {
             MobileElement loginBtn = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[4]");
             loginBtn.click();
 
-            //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            MobileElement el5 = (MobileElement) driver.findElementById("android:id/button1");
+            el5.click();
 
             Reports.report("OK", "Login Page", "Login butonu ekranda mevcut. Butona tıklandı ve giriş yapıldı...");
         } catch (NoSuchElementException e) {
             Reports.report("NoElement", "Login Page", "Login butonu ekranda mevcut değil...");
         }
+
+    }
+
+
+    public void forgotPasswordTest(){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            MobileElement forgotPassword = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.widget.TextView");
+            forgotPassword.click();
+            MobileElement emailField = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.EditText");
+            emailField.sendKeys("asdas@gmail.com");
+            MobileElement sendButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.widget.TextView");
+            sendButton.click();
+            MobileElement popupWarningButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button");
+            popupWarningButton.click();
+            MobileElement back = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView");
+            back.click();
+        }catch (Exception e){
+            Reports.report("FAIL", "Forgot Password", "forgot password process failed");
+        }
+
+
 
     }
 }

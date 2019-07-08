@@ -14,19 +14,13 @@ public class initTests {
         Login login = new Login(drv.getAndroidDriver());
         geovisionGroupUpdated update = new geovisionGroupUpdated(drv.getAndroidDriver());
         SideBar bar = new SideBar(drv.getAndroidDriver());
+        login.forgotPasswordTest();
         login.userLoginProcess();
         bar.testMenu();
         //update.gvgUpdated();
 
 
-        ClearData clearData = new ClearData(drv.getAndroidDriver());
-        clearData.clearAllDataButton();
-        clearData.warningPopUpIsOk();
 
-        login.userLoginProcess();
-        bar.testMenu();
-        clearData.clearAllDataButton();
-        clearData.warningPopUpCancel();
 
     }
 }

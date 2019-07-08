@@ -24,7 +24,7 @@ public class Rejected_müsteri {
 
             // awaiting elemanlar�n�n say�s� kontrol edilecek
 
-            Reports.report("OK", "approveAwaiting_müsteri test", "Düzgün çalışıyor");
+            Reports.report("OK", "Rejected_müsteri test", "Düzgün çalışıyor");
         } catch (Exception e) {
             Reports.report("Menu action Failed", "Rejected_müsteri test", "Rejected_müsteri failed...");
         }
