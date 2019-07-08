@@ -17,7 +17,7 @@ public class willBeClosed extends geovisionGroupUpdated {
         this.driver=driver;
     }
 
-    public  void Run() {
+    public  void run() {
         try{
             try{
                 TimeUnit.SECONDS.sleep(5);
@@ -61,8 +61,8 @@ public class willBeClosed extends geovisionGroupUpdated {
                 int startPoint = (int)(size.getHeight()*0.8);
                 int endPoint = (int)(size.getHeight()*0.2);
                 new TouchAction(driver).press(PointOption.point(width, startPoint)).waitAction().moveTo(PointOption.point(width, endPoint)).release().perform();*/
-
-                System.out.println(ListeyiSay());
+                int x = ListeyiSay();
+                System.out.println(x);
                 //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView
 
                 /*KisiSec("willBeClosed",1);
