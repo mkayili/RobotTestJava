@@ -8,6 +8,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.Point;
+
 import java.util.concurrent.TimeUnit;
 
 public class willBeClosed extends geovisionGroupUpdated {
@@ -28,12 +30,13 @@ public class willBeClosed extends geovisionGroupUpdated {
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             MobileElement willbeClosedButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]/android.view.View[1]");
             MobileElement willbeClosedText = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]/android.view.View[1]/android.widget.TextView[1]");
+
             if(willbeClosedText.getText().equals("0")) {
                 willbeClosedButton.click();
                 Reports.report("OK","geovisionGroupUpdated","Will Be Closed butonu ekranda mevcut. Butona tıklandı ...");
                 infoText();
             } else {
-                int count = Integer.parseInt(willbeClosedText.getText());
+                int expectedCount = Integer.parseInt(willbeClosedText.getText());
                 //System.out.println(count);
                 willbeClosedButton.click();
                 Reports.report("OK","geovisionGroupUpdated","Will Be Closed butonu ekranda mevcut. Butona tıklandı ...");
@@ -45,27 +48,35 @@ public class willBeClosed extends geovisionGroupUpdated {
                 }
                 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
                 MobileElement onayButonu = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button");
+
                 onayButonu.click();
 
-                /*driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                List<MobileElement> elements = driver.findElementsByClassName("android.widget.TextView");
-                System.out.println(elements.size());
-                for(int i = 0; i < elements.size(); i++) {
-                    System.out.println(elements.get(i).toString());
-                }*/
-                //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                //WebDriver webDriver = new We
-                //MobileElement scroll = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
-                /*Dimension size = driver.manage().window().getSize();
-                int width = (int)size.getWidth()/2;
-                int startPoint = (int)(size.getHeight()*0.8);
-                int endPoint = (int)(size.getHeight()*0.2);
-                new TouchAction(driver).press(PointOption.point(width, startPoint)).waitAction().moveTo(PointOption.point(width, endPoint)).release().perform();*/
-                int x = ListeyiSay();
-                System.out.println(x);
-                //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView
+                try{
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
 
-                /*KisiSec("willBeClosed",1);
+                    int count = ListeyiSay(el);
+                    if(expectedCount==count){
+                        Reports.report("OK","Liste","Beklenen eleman sayısı("+ expectedCount +") ile listedeki eleman sayısı("+ count +") aynı...");
+                    } else {
+                        Reports.report("NotMatching","Liste","Beklenen eleman sayısı("+ expectedCount +") ile listedeki eleman sayısı("+ count +") farklı...");
+                    }
+                }catch (NoSuchElementException e) {
+                    Reports.report("NoElement","Liste","Liste bulunamadı...");
+                }
+
+
+                /*try {
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    MobileElement el = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]");
+                    Point location = el.getLocation();
+                    System.out.println(location.getX()+" " + location.getY());
+                } catch (NoSuchElementException e) {
+
+                }*/
+
+
+                KisiSec("willBeClosed",1);
 
                 try {
                     try{
@@ -95,7 +106,7 @@ public class willBeClosed extends geovisionGroupUpdated {
                     Reports.report("OK","Info","OK butonu bulundu tıklandı...");
                 }catch (NoSuchElementException e) {
                     Reports.report("NoElement","Info","OK butonu bulunamadı...");
-                }  */
+                }
 
                 /*try {
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -116,9 +127,6 @@ public class willBeClosed extends geovisionGroupUpdated {
                 }*/
 
 
-
-
-                /*
                 try {
                     try{
                         TimeUnit.SECONDS.sleep(2);
@@ -240,7 +248,7 @@ public class willBeClosed extends geovisionGroupUpdated {
                     }
                 }catch (NoSuchElementException e) {
 
-                }*/
+                }
             }
         } catch (NoSuchElementException e) {
             Reports.report("NoElement", "geovisionGroupUpdated", "Will Be Closed butonu ekranda mevcut değil...");
