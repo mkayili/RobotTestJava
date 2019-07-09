@@ -2,6 +2,7 @@ package Modules.HomePage.GeovisionGroupUpdated;
 
 import Modules.HomePage.GeovisionGroupUpdated.InformationUpdate.informationUpdate;
 import Modules.HomePage.GeovisionGroupUpdated.WillBeClosed.willBeClosed;
+import Modules.HomePage.GeovisionGroupUpdated.NonFoundOutlets.nonFoundOutlets;
 
 import Report.Reports;
 import io.appium.java_client.MobileElement;
@@ -28,7 +29,7 @@ public class geovisionGroupUpdated {
         this.driver = driver;
     }
 
-    public void run() {
+    public void runTest() {
 
         try{
             driver.manage().timeouts().implicitlyWait(175, TimeUnit.SECONDS);
@@ -39,20 +40,28 @@ public class geovisionGroupUpdated {
             Reports.report("NoElement", "Home", "Update butonuna ulaşılamadı.");
         }
 
-        //willBeClosed willBeClosedTest = new willBeClosed(driver);
-        //willBeClosedTest.run();
+        willBeClosed willBeClosedTest = new willBeClosed(driver);
         informationUpdate informationUpdateTest = new informationUpdate(driver);
-        informationUpdateTest.run();
-        //dublicateOutlets();
-        //non_foundOutlets();
-        //willBeActivated();
-        //suggestedNewCustomer();
+        nonFoundOutlets nonFoundOutletsTest = new nonFoundOutlets(driver);
+        willBeClosedTest.runTest();
+        try{
+            driver.manage().timeouts().implicitlyWait(175, TimeUnit.SECONDS);
+            MobileElement UpdatedBtn = (MobileElement) driver.findElementByXPath("hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]");
+            UpdatedBtn.click();
+            Reports.report("OK","Home","Update butonu ekranda mevcut. Butona tıklandı ...");
+        }catch (NoSuchElementException e){
+            Reports.report("NoElement", "Home", "Update butonuna ulaşılamadı.");
+        }
+        //informationUpdateTest.runTest();
+        nonFoundOutletsTest.runTest();
+
+
         /*try {
             MobileElement mainScreenButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[2]");
             mainScreenButton.click();
-            Report.Reports.report("OK","geovisionGroupUpdated","initTests Screen butonu ekranda mevcut. Butona tıklandı ...");
+            Report.Reports.report("OK","geovisionGroupUpdated","InitTest.initTests Screen butonu ekranda mevcut. Butona tıklandı ...");
         }catch (NoSuchElementException e) {
-            Report.Reports.report("NoElement", "geovisionGroupUpdated", "initTests Screen butonu ekranda mevcut değil...");
+            Report.Reports.report("NoElement", "geovisionGroupUpdated", "InitTest.initTests Screen butonu ekranda mevcut değil...");
         }*/
     }
 
@@ -72,20 +81,6 @@ public class geovisionGroupUpdated {
         }
     }
 
-    public void non_foundOutlets() {
-        try{
-            MobileElement non_foundOutletsButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]/android.view.View[4]");
-            MobileElement non_foundOutletsText = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]/android.view.View[4]/android.widget.TextView[1]");
-            if(non_foundOutletsText.getText().equals("0")) {
-                non_foundOutletsButton.click();
-                Reports.report("OK","geovisionGroupUpdated","Non Found Outlets butonu ekranda mevcut. Butona tıklandı ...");
-                infoText();
-            } else {
-            }
-        } catch (NoSuchElementException e) {
-            Reports.report("NoElement", "geovisionGroupUpdated", "Non Found Outlets butonu ekranda mevcut değil...");
-        }
-    }
 
     public void willBeActivated() {
         try{
@@ -179,7 +174,7 @@ public class geovisionGroupUpdated {
         }
     }
 
-    public int ListeyiSay(MobileElement element) {
+    public int ListeyiSay(String Page,MobileElement element) {
         HashSet<String> liste = new HashSet<String>();
         Point location = element.getLocation();
         Dimension size = driver.manage().window().getSize();
@@ -191,9 +186,6 @@ public class geovisionGroupUpdated {
             try {
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + i + "]/android.view.View[1]/android.widget.TextView[1]");
-                                                                                      //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]/android.view.View[1]/android.widget.TextView[1]
-
-
 
                 if (el3.isDisplayed()) {
                     liste.add(el3.getText());
@@ -205,7 +197,7 @@ public class geovisionGroupUpdated {
                     //System.out.println(liste);
                     return liste.size();
                 }catch (NoSuchElementException x) {
-                    Reports.report("Liste alınıyor","List","scroll yapılacak");
+                    Reports.report("Liste alınıyor",Page,"scroll yapılacak");
                     new TouchAction(driver).press(PointOption.point(width, startPoint)).waitAction().moveTo(PointOption.point(width, endPoint)).release().perform();
                     i=0;
                 }
@@ -219,7 +211,7 @@ public class geovisionGroupUpdated {
     public void Foto() {
         try {
             try{
-                TimeUnit.SECONDS.sleep(2);
+                TimeUnit.SECONDS.sleep(5);
 
             }catch (InterruptedException e) {
 

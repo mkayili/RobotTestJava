@@ -35,4 +35,8 @@ public class DriverController {
         return driver;
     }
 
+    public void endSession() {
+        driver.quit();
+    }
+
 }

@@ -1,19 +1,20 @@
 package Report;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.InputStream;
+import InitTest.*;
+import Utils.DriverController;
+import io.appium.java_client.android.AndroidDriver;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
 import java.util.Date;
 import java.util.UUID;
 
 public class Reports {
     private static String dateFormat = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(Calendar.getInstance().getTime());
     private static String reportName = "report"+"-" + dateFormat +".txt";
-
-    public Reports(boolean detect) {
+    private AndroidDriver driver;
+    public Reports(boolean detect, AndroidDriver driver) {
+        this.driver = driver;
         if (detect)
             open();
     }
@@ -24,12 +25,42 @@ public class Reports {
                 System.out.println("Crash Detector starting...");
 
                 try {
-                    ProcessBuilder ps = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe", "-c", "adb logcat | grep FATAL | tee -a " + reportName);
+                    Process clear = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe","adb logcat -c").start();
+                    clear.waitFor();
+                    clear.destroy();
+                    ProcessBuilder ps = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe", "-c", "adb logcat | grep --line-buffered \"FATAL\" | tee -a " + reportName);
+
+                    ps.redirectErrorStream(true);
+
                     Process pr = ps.start();
+
+
+                    InputStream in = pr.getErrorStream();
+                    for (int i = 0; i < in.available(); i++) {
+                        System.out.println("" + in.read());
+                    }
+
+                    pr.waitFor();
 
                 } catch (Exception e) {
                     System.out.println("Crash detector başlatılamadı. gitbash.exe veya Adb ve/veya Emulator ayarlarınızı kontrol ediniz");
                 }
+                try {
+                    File file = new File(reportName);
+                    file.createNewFile();
+                    BufferedReader br = new BufferedReader(new FileReader(file));
+                    String st;
+                    while (true) {
+                        while ((st = br.readLine()) != null) {
+                            if (st.contains("FATAL")) {
+                                initTest afterFatal = new initTest();
+
+                            }
+                        }
+                        Thread.sleep(2000);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();}
             }
         }.start();
     }

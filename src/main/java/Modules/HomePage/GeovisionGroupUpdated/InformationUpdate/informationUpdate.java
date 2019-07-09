@@ -16,8 +16,7 @@ public class informationUpdate extends geovisionGroupUpdated {
         this.driver = driver;
     }
 
-    public void run() {
-        System.out.println("Information Update calisiyor...");
+    public void runTest() {
         try {
             try {
                 TimeUnit.SECONDS.sleep(5);
@@ -34,7 +33,7 @@ public class informationUpdate extends geovisionGroupUpdated {
                 infoText();
             } else {
                 int expectedCount = Integer.parseInt(informationUpdateText.getText());
-                //System.out.println(count);
+                System.out.println(expectedCount);
                 informationUpdateButton.click();
                 Reports.report("OK", "geovisionGroupUpdated", "Information Update butonu ekranda mevcut. Butona tıklandı ...");
                 try {
@@ -48,7 +47,7 @@ public class informationUpdate extends geovisionGroupUpdated {
 
                 onayButonu.click();
 
-                try {
+                /*try {
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     MobileElement el = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
                     int count = ListeyiSay(el);
@@ -59,7 +58,25 @@ public class informationUpdate extends geovisionGroupUpdated {
                     }
                 } catch (NoSuchElementException e) {
                     Reports.report("NoElement", "Liste", "Liste bulunamadı...");
-                }
+                }*/
+            }
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                MobileElement homePage = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.widget.TextView");
+                homePage.click();
+                Reports.report("OK","Information Update","Home page butonu bulundu tıklandı...");
+                driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            } catch (NoSuchElementException e) {
+                Reports.report("NoElement","Information Update","Home page butonu bulunamadı...");
+            }
+
+            try{
+                driver.manage().timeouts().implicitlyWait(175, TimeUnit.SECONDS);
+                MobileElement UpdatedBtn = (MobileElement) driver.findElementByXPath("hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]");
+                UpdatedBtn.click();
+                Reports.report("OK","Home","Update butonu ekranda mevcut. Butona tıklandı ...");
+            }catch (NoSuchElementException e){
+                Reports.report("NoElement", "Home", "Update butonuna ulaşılamadı.");
             }
 
         } catch (NoSuchElementException e) {

@@ -17,7 +17,7 @@ public class Logout {
         this.driver = driver;
     }
 
-    public void logOutProcess() throws InterruptedException {
+    public void logOutProcess()  {
             try {
                 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
                 TouchAction action = new TouchAction(driver);
@@ -35,8 +35,11 @@ public class Logout {
                 Reports.report("NoElement", "Login Page",
                         "Sidebar menüde swipe işlemi yapılamadı..");
             }
+            try {
+                Thread.sleep(2000);
+            }catch (Exception e) {
 
-            Thread.sleep(2000);
+            }
             MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[8]/android.widget.TextView[2]");
             el4.click();
             Reports.report("OK", "Login Page",

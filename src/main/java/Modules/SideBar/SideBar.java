@@ -36,9 +36,9 @@ public class SideBar {
         }
     }
 
-    public void testMenu() throws InterruptedException{
+    public void testMenu(){
         try {
-            driver.manage().timeouts().implicitlyWait(175, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             Initialize();
         } catch (NoSuchElementException e) {
             Reports.report("NoElement", "openMenu", "Menu iconu bu ekranda mevcut degil...");
@@ -68,7 +68,7 @@ public class SideBar {
     }
 
 
-    public void Initialize()throws InterruptedException {
+    public void Initialize() {
         try {
             approveAwaitingTest approveAwaiting = new approveAwaitingTest(driver);
             approvedPointsTest approvedPoints = new approvedPointsTest(driver);
@@ -95,6 +95,7 @@ public class SideBar {
             clearData.clearAllDataButton();
             clearData.warningPopUpCancel();
             logout.logOutProcess();
+
 
         } catch (NoSuchElementException e) {
             Reports.report("FAIL", "sideBar", "Bir test failladı");
