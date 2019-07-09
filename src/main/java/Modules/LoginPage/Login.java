@@ -14,7 +14,7 @@ public class Login {
         this.driver = driver;
     }
 
-    public void userLoginProcess() {
+    public void userLoginProcess(String usrname, String pass) {
 
 
         //Report.Reports.report("OK", "Login Page", "Uygulamanın açılması "+(endTime-startTime) + "sürdü ...");
@@ -22,7 +22,7 @@ public class Login {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             MobileElement username = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.EditText");
             username.click();
-            username.sendKeys("TEST90016932");//dolu hesap TEST90001336
+            username.sendKeys(usrname);//dolu hesap TEST90001336 bos TEST90016932
             driver.hideKeyboard();
             Reports.report("OK", "Login Page",
                     "Username metin alanı ekranda mevcut.İlgili metin girildi ve klavye kapatıldı...");
@@ -35,7 +35,7 @@ public class Login {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             MobileElement password = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText");
             password.click();
-            password.sendKeys("1111");
+            password.sendKeys(pass);
             driver.hideKeyboard();
             Reports.report("OK", "Login Page", "Password metin alanı mevcut. İlgili metin girildi ve klavye kapatıldı...");
 

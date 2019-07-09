@@ -54,7 +54,7 @@ public class Reports {
                         while ((st = br.readLine()) != null) {
                             if (st.contains("FATAL")) {
                                 initTest afterFatal = new initTest();
-
+                                stop();
                             }
                         }
                         Thread.sleep(2000);

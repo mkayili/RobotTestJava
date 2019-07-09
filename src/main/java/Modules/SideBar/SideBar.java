@@ -21,8 +21,11 @@ import java.util.concurrent.TimeUnit;
 
 public class SideBar {
     private AndroidDriver driver;
-    public SideBar(AndroidDriver driver) {
+    private String  username,password;
+    public SideBar(AndroidDriver driver,String username,String password) {
         this.driver = driver;
+        this.username = username;
+        this.password = password;
     }
 
     public void OpenSideBar(){
@@ -89,7 +92,7 @@ public class SideBar {
             clearData.clearAllDataButton();
             clearData.warningPopUpIsOk();
 
-            login.userLoginProcess();
+            login.userLoginProcess(username,password);
             OpenSideBar();
             buttonTest();
             clearData.clearAllDataButton();
