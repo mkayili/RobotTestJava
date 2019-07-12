@@ -74,14 +74,21 @@ public class Login {
                 emailField.sendKeys("asdas@gmail.com");
                 MobileElement sendButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.widget.TextView");
                 sendButton.click();
+                Reports.report("OK", "Forgot Password Page", "Email gönderildi...");
             }catch (NoSuchElementException e) {
-
+                Reports.report("NoElement", "Forgot Password Page", "Email gönderilemedi...");
             }
 
-            MobileElement popupWarningButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button");
-            popupWarningButton.click();
-            MobileElement back = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView");
-            back.click();
+            try {
+                MobileElement popupWarningButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button");
+                popupWarningButton.click();
+                MobileElement back = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView");
+                back.click();
+                Reports.report("OK", "Forgot Password Page", "Warning ekranı geçildi login sayfasına dönüldü...");
+            } catch (NoSuchElementException e) {
+                Reports.report("NoElement", "Forgot Password Page", "Login sayfasına dönülemedi...");
+            }
+
         } catch (Exception e) {
             Reports.report("FAIL", "Forgot Password", "forgot password process failed");
         }

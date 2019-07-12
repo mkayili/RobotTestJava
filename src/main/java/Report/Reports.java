@@ -75,7 +75,8 @@ public class Reports {
                         while ((st = br.readLine()) != null) {
                             System.out.println("reading...");
                             if (st.contains("FATAL")) {
-                                Reports.report("--------------------","----------"+t.getTestCount()+". test bitti---------","--------------------");
+                                System.out.println("FATAL!!!");
+                                Reports.report("--------------------","----------"+test.getTestCount()+". test bitti---------","--------------------");
                                 restart=true;
                             } else if(st.contains("test bitti")) {
                                 restart=true;

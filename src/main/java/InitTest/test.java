@@ -21,12 +21,13 @@ public class test{
         Login login = new Login(drv.getAndroidDriver());
         geovisionGroupUpdated update = new geovisionGroupUpdated(drv.getAndroidDriver());
         SideBar bar = new SideBar(drv.getAndroidDriver(),arg1, arg2);
+        login.forgotPasswordTest();
         login.userLoginProcess(arg1,arg2);
         update.runTest();
         bar.testMenu();
         Reports.report("--------------------","----------"+testCount+". test bitti---------","--------------------");
     }
-    public int getTestCount(){
+    public static int getTestCount(){
         return testCount;
     }
     public void endSession() {
