@@ -6,8 +6,9 @@ import Modules.SideBar.SideBar;
 import Report.Reports;
 import Utils.DriverController;
 
-public class test {
+public class test{
     DriverController drv = new DriverController();
+    static int testCount=0;
     public test(String arg1, String arg2) {
         try {
             Process killBash = new ProcessBuilder("taskkill /IM bash.exe /F").start();
@@ -16,17 +17,27 @@ public class test {
         } catch (Exception e) {
 
         }
-
-        Reports reports= new Reports(true,drv.getAndroidDriver());
+        testCount++;
         Login login = new Login(drv.getAndroidDriver());
         geovisionGroupUpdated update = new geovisionGroupUpdated(drv.getAndroidDriver());
         SideBar bar = new SideBar(drv.getAndroidDriver(),arg1, arg2);
         login.userLoginProcess(arg1,arg2);
         update.runTest();
         bar.testMenu();
+        Reports.report("--------------------","----------"+testCount+". test bitti---------","--------------------");
+    }
+    public int getTestCount(){
+        return testCount;
     }
     public void endSession() {
+
         drv.endSession();
-        drv = new DriverController();
+        //drv = new DriverController();
+    }
+
+    public void restart(test t) {
+        endSession();
+        t = new test("","");
+
     }
 }

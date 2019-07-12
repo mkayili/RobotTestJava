@@ -12,13 +12,13 @@ public class initTest{
     public static void main(String[] args) {
         String username = args[0];
         String pass = args[1];
-        test startTest = new test(username,pass);
-        int i=0;
-        while(true) {
-            ++i;
-            Reports.report("--------------------","----------"+i+". test bitti---------","--------------------");
+
+        //test startTest = new test(username,pass);
+        Reports reports= new Reports(true,username,pass);
+        /*while(true) {
+            //Reports.report("--------------------","----------"+i+". test bitti---------","--------------------");
             startTest.endSession();
             startTest = new test(username,pass);
-       }
+       }*/
     }
 }

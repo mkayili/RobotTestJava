@@ -12,11 +12,32 @@ import java.util.UUID;
 public class Reports {
     private static String dateFormat = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(Calendar.getInstance().getTime());
     private static String reportName = "report"+"-" + dateFormat +".txt";
-    private AndroidDriver driver;
-    public Reports(boolean detect, AndroidDriver driver) {
-        this.driver = driver;
+    //private AndroidDriver driver;
+    private String username,password;
+    private test t;
+    private boolean restart=true;
+    public Reports(boolean detect,String username, String password) {
+        //this.driver = driver;
+
+        //this.t = t;
+        this.username = username;
+        this.password = password;
         if (detect)
             open();
+        while(true) {
+            if(restart) {
+                restart = false;
+                t = null;
+                t = new test(username, password);
+            }
+            try {
+                Thread.sleep(1000);
+            }catch (Exception e) {
+
+            }
+
+        }
+        //t = new test(username,password);
     }
 
     void open() {
@@ -25,7 +46,7 @@ public class Reports {
                 System.out.println("Crash Detector starting...");
 
                 try {
-                    Process clear = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe","adb logcat -c").start();
+                    Process clear = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe", "-c","adb logcat -c").start();
                     clear.waitFor();
                     clear.destroy();
                     ProcessBuilder ps = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe", "-c", "adb logcat | grep --line-buffered \"FATAL\" | tee -a " + reportName);
@@ -35,12 +56,12 @@ public class Reports {
                     Process pr = ps.start();
 
 
-                    InputStream in = pr.getErrorStream();
+                    /*InputStream in = pr.getErrorStream();
                     for (int i = 0; i < in.available(); i++) {
                         System.out.println("" + in.read());
                     }
 
-                    pr.waitFor();
+                    pr.waitFor();*/
 
                 } catch (Exception e) {
                     System.out.println("Crash detector başlatılamadı. gitbash.exe veya Adb ve/veya Emulator ayarlarınızı kontrol ediniz");
@@ -52,9 +73,12 @@ public class Reports {
                     String st;
                     while (true) {
                         while ((st = br.readLine()) != null) {
+                            System.out.println("reading...");
                             if (st.contains("FATAL")) {
-                                initTest afterFatal = new initTest();
-                                stop();
+                                Reports.report("--------------------","----------"+t.getTestCount()+". test bitti---------","--------------------");
+                                restart=true;
+                            } else if(st.contains("test bitti")) {
+                                restart=true;
                             }
                         }
                         Thread.sleep(2000);
@@ -65,6 +89,7 @@ public class Reports {
         }.start();
     }
     public static void report(String status, String page, String messsage){
+        String time = new SimpleDateFormat("[HH-mm-ss]").format(Calendar.getInstance().getTime());
         String str = status+" - "+page+" - "+messsage;
         System.out.println(str);
         try{
