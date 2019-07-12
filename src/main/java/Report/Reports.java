@@ -25,8 +25,10 @@ public class Reports {
         if (detect)
             open();
         while(true) {
+            System.out.println("-");
             if(restart) {
                 restart = false;
+                System.out.println("restarting...");
                 t = null;
                 t = new test(username, password);
             }
@@ -49,7 +51,7 @@ public class Reports {
                     Process clear = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe", "-c","adb logcat -c").start();
                     clear.waitFor();
                     clear.destroy();
-                    ProcessBuilder ps = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe", "-c", "adb logcat | grep --line-buffered \"FATAL\" | tee -a " + reportName);
+                    ProcessBuilder ps = new ProcessBuilder("C:\\Program Files\\Git\\git-bash.exe", "-c", "adb logcat -b crash AndroidRuntime:E *:S | tee -a " +reportName );
 
                     ps.redirectErrorStream(true);
 
@@ -77,6 +79,7 @@ public class Reports {
                             if (st.contains("FATAL")) {
                                 System.out.println("FATAL!!!");
                                 Reports.report("--------------------","----------"+test.getTestCount()+". test bitti---------","--------------------");
+                                t.endSession();
                                 restart=true;
                             } else if(st.contains("test bitti")) {
                                 restart=true;
