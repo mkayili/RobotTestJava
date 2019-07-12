@@ -1,0 +1,52 @@
+Selamlar,,
+
+
+Robot testlerde kullandığımız pattern şuanda basit void class lar üzerinden tek threadden çağrılar olarak ilerlemektedir. Proje büyüdükçe ve sayfa sayıları arttıkça, bu yapının yetersiz ve istenilen zamanda istenilen şekilde modullere ulaşmada zorluk çektiğimizi anlıyoruz. Bugunki yoğunluk sebebiyle OOP gibi bir konuya giriş yapamadık.
+
+Öncelikle sizden javada kullandıgımız mimariyi değiştireceğimizi ihtiyaçlarımıza daha uygun bir dizayn yapacağımız için ön araştırma olarak ::
+
+1)
+Javada Inheritance / Multi Level Inheritance 
+
+https://www.guru99.com/java-class-inheritance.html
+
+Ploymorhpisim (Çok çeşitlilik) / Encapsulation (Data saklama)
+
+çok yüzeysel bir google araştırması yapmanızı istiyorum
+
+2) Daha sonra
+Bunu dışında bizim kullanacağımız sistem üzerinden düşünmeniz açısından şu örneği verebiliriz. 
+
+
+örneğin şuanki sistem:
+
+public test
+ -do test
+public reports
+ -start new test
+ -repeat
+public main
+ -start reports
+ 
+yapmak istediğimiz sistem(herşeye heryerden ulaşmanın daha kolay ve hızlı olacagı sistem):
+
+-public logintest extends driverModule implements reportsInterface
+ getdriver()
+ writelogline()
+ readlogline()
+
+-public mainpage extends driverModule implements reportsInterface
+..
+...
+- public approveawaitng extends driverModule implements reportsInterface
+...
+...
+
+
+
+Böylelikle ne aynı anda thread çalıştırmaya gerek kalıyor ne başka birşeye OOP nin temeli bu şekildedir. Herşeyininstancesını defalarca yaratarak ulaşmaktansa bir kere yaratılır.
+İlk öğrenme biraz maliyetli olabilir, learning curve fazladır, ama daha sonrasında OOP yle İşimizin daha da kolaylaştırıcağını göreceğiz.
+
+Bu abstract factory pattern olarak geçiyor, ama ihtiyaca göre dolaylama yapılabilir.
+
+https://www.javatpoint.com/abstract-factory-pattern ve diğerleri
