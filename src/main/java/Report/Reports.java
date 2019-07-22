@@ -232,7 +232,7 @@ public class Reports {
                     }
             }
 
-            System.out.println("okundu: " + lastLine);
+            //System.out.println("okundu: " + lastLine);
             if (lastLine.contains("E/AndroidRuntime")) {
                 System.out.println("FATALLLL");
                 //Reports.report("--------------------", "----------" + test.getTestCount() + ". test bitti---------", "--------------------");
