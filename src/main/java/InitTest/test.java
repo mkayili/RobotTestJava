@@ -1,12 +1,10 @@
 package InitTest;
-import Modules.HomePage.CustomerUpdates.customerUpdates;
+
 import Modules.HomePage.GeovisionGroupUpdated.geovisionGroupUpdated;
 import Modules.LoginPage.Login;
 import Modules.SideBar.SideBar;
 import Report.Reports;
 import Utils.DriverController;
-
-import java.util.Scanner;
 
 public class test{
     private DriverController drv;
@@ -29,15 +27,10 @@ public class test{
         testCount++;
         Login login = new Login(drv.getAndroidDriver());
         geovisionGroupUpdated update = new geovisionGroupUpdated(drv.getAndroidDriver());
-        customerUpdates customerUpdates = new customerUpdates(drv.getAndroidDriver());
         SideBar bar = new SideBar(drv.getAndroidDriver(),username, password);
         login.forgotPasswordTest();
         login.userLoginProcess(username,password);
-        customerUpdates.runTest();
-
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
-        //update.runTest();
+        update.runTest();
         //bar.testMenu();
         Reports.report("--------------------","----------"+testCount+". test bitti(basarili)---------","--------------------");
     }
