@@ -15,11 +15,10 @@ import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.*;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
 
 
 import javax.swing.text.Position;
@@ -48,9 +47,9 @@ public class geovisionGroupUpdated {
         willBeClosed willBeClosedTest = new willBeClosed(driver);
         informationUpdate informationUpdateTest = new informationUpdate(driver);
         nonFoundOutlets nonFoundOutletsTest = new nonFoundOutlets(driver);
-        willBeClosedTest.runTest();
+        //willBeClosedTest.runTest();
         //updatedButton();
-        informationUpdateTest.runTest();
+        //informationUpdateTest.runTest();
         //updatedButton();
         nonFoundOutletsTest.runTest();
 
@@ -142,37 +141,58 @@ public class geovisionGroupUpdated {
 
 
         try {
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + sira +"]/android.view.View[1]/android.widget.TextView[3]");
+                                                                                 //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.view.View[1]
+
             el1.click();        //Listedeki ilk buton info
 
             Reports.report("OK",page,sira + ". sıradaki Info butonu bulundu tıklandı...");
-        }catch (NoSuchElementException e) {
-            Reports.report("NoElement",page,sira + ". sıradaki Info butonu bulunamadı...");
-        }
+            try {
+                try{
+                    TimeUnit.SECONDS.sleep(2);
 
-        try {
-            try{
-                TimeUnit.SECONDS.sleep(2);
+                }catch (InterruptedException e) {
 
-            }catch (InterruptedException e) {
-
+                }
+                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View");
+                el2.click();        //Info uyarı OK buton
+                Reports.report("OK","Info","OK butonu bulundu tıklandı...");
+            }catch (NoSuchElementException e) {
+                Reports.report("NoElement","Info","OK butonu bulunamadı...");
             }
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View");
-            el2.click();        //Info uyarı OK buton
-            Reports.report("OK","Info","OK butonu bulundu tıklandı...");
         }catch (NoSuchElementException e) {
-            //Reports.report("NoElement","Info","OK butonu bulunamadı...");
+            //Reports.report("NoElement",page,sira + ". sıradaki Info butonu bulunamadı...");
         }
+
+
 
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ sira +"]/android.view.View[1]");
+                                                                                 //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]
+                                                                                 //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.view.View[1]
+                                                                                 //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.view.View[1]
+
+
+
             el3.click();        //Listedeki sıra buton
             Reports.report("OK",page,sira + ". sıradaki Bilgiler bulundu tıklandı...");
         }catch (NoSuchElementException e) {
             Reports.report("NoElement",page,sira + ". sıradaki Bilgiler bulunamadı...");
+        }
+    }
+
+    public void goHome(String page) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            MobileElement homePage = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.widget.TextView");
+            homePage.click();
+            Reports.report("OK",page,"Home page butonu bulundu tıklandı...");
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+        } catch (NoSuchElementException e) {
+            Reports.report("NoElement",page,"Home page butonu bulunamadı...");
         }
     }
 
@@ -187,17 +207,41 @@ public class geovisionGroupUpdated {
         for(i=1;;++i) {
             try {
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-                MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + i + "]/android.view.View[1]/android.widget.TextView[1]");
-
+                MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + i + "]/android.view.View[1]/android.widget.TextView[2]");
+                                                                                     //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]
+                                                                                     //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.view.View[1]/android.widget.TextView[1]
+                                                                                     //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.widget.TextView
+                                                                                     //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.widget.TextView
+                                                                                     //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.view.View[1]/android.widget.TextView[3]
+                                                                                     //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[4]/android.view.View[1]/android.widget.TextView[2]
+                try {
+                    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+                    MobileElement el = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + i + "]/android.view.View[1]/android.widget.TextView[1]");
+                    liste.add(el.getText());
+                    //System.out.println(el.getText());
+                } catch (NoSuchElementException e) {
+                    System.out.println("Liste elemanı alınamadı...");
+                }
+                /*el3.findElements(By.xpath(""));
                 if (el3.isDisplayed()) {
                     liste.add(el3.getText());
-                }
+                    System.out.println(el3.getText());
+                }*/
             }catch (NoSuchElementException e) {
                 try {
                     driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                     MobileElement el = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[" + i + "]/android.widget.TextView");
+                                                                                        //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.widget.TextView
+                                                                                        //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[5]/android.widget.TextView
+
+                    //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[5]/android.widget.TextView
+                                                                                        //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[6]/android.widget.TextView
+                    if(el.getText().equals("All points loaded")) {
+                        //System.out.println(liste);
+                        return liste.size();
+                    }
                     //System.out.println(liste);
-                    return liste.size();
+
                 }catch (NoSuchElementException x) {
                     Reports.report("Liste alınıyor",Page,"scroll yapılacak");
                     new TouchAction(driver).press(PointOption.point(width, startPoint)).waitAction().moveTo(PointOption.point(width, endPoint)).release().perform();
@@ -227,7 +271,8 @@ public class geovisionGroupUpdated {
                 MobileElement listeEl = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View[1]/android.view.View/android.widget.TextView");
                                                                                          //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]
                                                                                          //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]
-
+                                                                                         //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]
+                                                                                         ///hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.widget.TextView
 
                 //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.TextView
                                                                                          //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]/android.view.View[1]/android.view.View/android.widget.TextView
@@ -253,14 +298,18 @@ public class geovisionGroupUpdated {
                             driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                             MobileElement cevapEdittext = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View[2]/android.view.View/android.widget.EditText");
                             String cevap = cevapEdittext.getText();//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.widget.EditText
+                            System.out.println(cevap);
+                            //cevapEdittext.sendKeys("");
+                            cevapEdittext.clear();
                             if(listeEl.getText().contains("Phone") || listeEl.getText().contains("Telefon")) {
                                 cevap = cevap.replaceAll("\\(","");
                                 cevap = cevap.replaceAll("\\)","");
                                 cevap = cevap.replaceAll(" ","");
-                                System.out.println(cevap);
+                                //System.out.println(cevap);
+                                cevapEdittext.sendKeys("");
                                 try {
                                     int j=0;
-                                    cevapEdittext.sendKeys("");
+
                                     do {
                                         Thread.sleep(300);
                                         char c = cevap.charAt(j);
@@ -309,7 +358,8 @@ public class geovisionGroupUpdated {
 
                                 }
                             }else {
-                                cevapEdittext.sendKeys(cevap);
+                                System.out.println(cevap);
+                                cevapEdittext.sendKeys("xd");
                             }
 
 
@@ -325,12 +375,27 @@ public class geovisionGroupUpdated {
                             try {
                                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                                 MobileElement scrollList = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View[2]/android.view.View/android.view.View/android.view.View");
-                                //String cevap = cevapEdittext.getText();
+                                                                                                            //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View/android.view.View
                                 System.out.println("Liste bulundu");
-                                scrollList.click();
-                                MobileElement ilkEleman = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]");
-                                ilkEleman.click();
-                                Reports.report("OK",Page,"ScrollList bulundu,cevap secildi ...");
+                                try {
+                                    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+                                    MobileElement scrollListText = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View[2]/android.view.View/android.view.View/android.view.View/android.widget.TextView");
+
+                                    if(scrollListText.getText().equals("Select")){
+                                        scrollList.click();
+                                        MobileElement ilkEleman = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]");
+                                        ilkEleman.click();
+                                        Reports.report("OK",Page,"ScrollList bulundu,cevap secildi ...");
+                                    }
+
+
+                                } catch (NoSuchElementException e) {
+
+                                }
+
+                                //String cevap = cevapEdittext.getText();
+
+
                             } catch (NoSuchElementException ex) {
                                 try {
                                     driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -338,13 +403,19 @@ public class geovisionGroupUpdated {
                                     //MobileElement checkBoxText = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.TextView[2]");
                                     MobileElement checkBox = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View/android.view.View/android.view.View");
                                     MobileElement checkBoxText = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.TextView[2]");
-                                    System.out.println(checkBoxText.getText());
+                                    //System.out.println(checkBoxText.getText());
                                     checkBox.click();
                                     //new TouchAction(driver).longPress(longPressOptions().withElement(element(checkBox)).withDuration(Duration.ofMillis(10000))).release().perform();
                                     //new TouchAction(driver).longPress(LongPressOptions.longPressOptions().withElement(element(checkBox))).release().perform();
                                     try {
                                         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                                         MobileElement fotoButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View[1]/android.view.View/android.view.View");
+                                                                                                                    //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.view.View[2]
+                                                                                                                    //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.view.View[1]
+                                                                                                                    //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]/android.view.View/android.view.View
+
+
+
                                         //fotoButton.click();
                                         //Foto2();
                                         Reports.report("OK",Page,"Fotograf cekildi ...");
@@ -359,14 +430,22 @@ public class geovisionGroupUpdated {
                     }
                 }
             }catch (NoSuchElementException e) {
-                if(i!=1){
-                    Reports.report("Liste alınıyor",Page,"scroll yapılacak");
-                    new TouchAction(driver).press(PointOption.point(width, startPoint)).waitAction().moveTo(PointOption.point(width, endPoint)).release().perform();
-                    firstIndex=1;
-                    i=0;
-                } else {
-                    firstIndex = 2;
+                try {
+                    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+                    MobileElement fotoButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView/android.view.View/android.view.View["+ i +"]/android.view.View/android.view.View/android.view.View[2]");
+                    fotoButton.click();
+                    Foto2();
+                } catch (NoSuchElementException ex) {
+                    if(i!=1){
+                        Reports.report("Liste alınıyor",Page,"scroll yapılacak");
+                        new TouchAction(driver).press(PointOption.point(width, startPoint)).waitAction().moveTo(PointOption.point(width, endPoint)).release().perform();
+                        firstIndex=1;
+                        i=0;
+                    } else {
+                        firstIndex = 2;
+                    }
                 }
+
             }
 
         }
@@ -655,17 +734,21 @@ public class geovisionGroupUpdated {
 
     }
 
-    public void checkifLoading(String Page) {
+    public void checkifLoading(String Page,String xpath) {
         int i=0;
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            MobileElement loadingSymbol = (MobileElement) driver.findElementByXPath(xpath);
+            i++;
+        }catch (NoSuchElementException e) {
+            //Reports.report("NoElement",Page,"Loading bulunamadi...");
+            //return;
+        }
         while(true) {
-            try {
-                Thread.sleep(2000);
-            } catch (Exception e) {
 
-            }
             try {
                 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-                MobileElement loadingSymbol = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.widget.FrameLayout/android.widget.ProgressBar");
+                MobileElement loadingSymbol = (MobileElement) driver.findElementByXPath(xpath);
                 i++;
             }catch (NoSuchElementException e) {
                 if(i<1) {
@@ -721,6 +804,8 @@ public class geovisionGroupUpdated {
         String answer = str.substring(str.indexOf("(")+1,str.indexOf(")"));
         return answer;
     }
+
+
 
     public void updatedButton(){
         try{

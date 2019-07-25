@@ -245,13 +245,22 @@ public class Reports {
                 bw.close();
                 t.start();
             } else if (lastLine.contains("test bitti(basarili)")) {
-                System.out.println("bittii");
+                System.out.println("--------------------" + "----------" + test.getTestCount() + ". test bitti(basarili)---------" + "--------------------");
                 t.endSession();
                 bw.newLine();
                 bw.close();
                 t = new test(username, password);
                 t.start();
-            } else{
+            } else if(lastLine.contains("Test failed")) {
+                t = new test(username, password);
+                System.out.println("--------------------"+ "----------" + test.getTestCount() + ". test bitti(FAIL)---------"+ "--------------------");
+                bw.append("--------------------"+ "----------" + test.getTestCount() + ". test bitti(FAIL)---------"+ "--------------------");
+                bw.newLine();
+                //bw.newLine();
+                bw.close();
+                t.start();
+            }
+            else{
                 bw.close();
             }
 

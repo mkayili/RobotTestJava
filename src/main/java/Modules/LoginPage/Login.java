@@ -50,8 +50,10 @@ public class Login {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             MobileElement loginBtn = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[4]");
             loginBtn.click();
+            Reports.report("OK", "Login Page", "Login butonu ekranda mevcut. Butona tıklandı ...");
+            checkifLoading("Login");
             try {
-                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
                 MobileElement text = (MobileElement) driver.findElementById("android:id/message");
                 MobileElement el5 = (MobileElement) driver.findElementById("android:id/button1");
                 if(text.getText().equals("Check your username or password.")) {
@@ -66,8 +68,7 @@ public class Login {
             }
 
 
-            Reports.report("OK", "Login Page", "Login butonu ekranda mevcut. Butona tıklandı ve giriş yapıldı...");
-            checkifLoading("Login");
+
         } catch (NoSuchElementException e) {
             Reports.report("NoElement", "Login Page", "Login butonu ekranda mevcut değil...");
         }
@@ -106,20 +107,44 @@ public class Login {
 
     public void checkifLoading(String Page) {
         int i=0;
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            MobileElement loadingSymbol = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.widget.FrameLayout/android.widget.ProgressBar");
+
+
+            i++;
+        }catch (NoSuchElementException e) {
+            //Reports.report("NoElement",Page,"Loading bulunamadi...");
+            //return;
+        }
         while(true) {
-            try {
-                Thread.sleep(1000);
+            /*try {
+                Thread.sleep(100);
             } catch (Exception e) {
 
-            }
+            }*/
             try {
-                driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
                 MobileElement loadingSymbol = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.widget.FrameLayout/android.widget.ProgressBar");
                 i++;
             }catch (NoSuchElementException e) {
-                if(i<1) Reports.report("NoElement",Page,"Loading bulunamadi...");
-                else Reports.report("OK",Page,"Loading tamamlandi...");
-                break;
+                try {
+                    driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+                    MobileElement text = (MobileElement) driver.findElementById("android:id/message");
+                    MobileElement el5 = (MobileElement) driver.findElementById("android:id/button1");
+                    if(text.getText().equals("Check your username or password.")) {
+                        Reports.report("Fail","Login","Wrong username or password, terminating...");
+                        System.exit(1);
+                    }
+                    el5.click();
+                } catch (NoSuchElementException ex) {
+                    if(i<1) Reports.report("NoElement",Page,"Loading bulunamadi...");
+                    else Reports.report("OK",Page,"Loading tamamlandi...");
+                    break;
+                }
+
+
+
             }
         }
     }
