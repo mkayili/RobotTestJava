@@ -30,6 +30,8 @@ public class willBeClosed extends geovisionGroupUpdated {
         else if(expectedCount>0) {
             Reports.report("OK", "Geovision Group Updated", "Will Be Closed butonu ekranda mevcut. Butona tıklandı ...");
             try {
+
+
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 MobileElement listeScrollview = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
                 int count = ListeyiSay("Will Be Closed", listeScrollview);
@@ -41,11 +43,16 @@ public class willBeClosed extends geovisionGroupUpdated {
             } catch (NoSuchElementException e) {
                 Reports.report("NoElement", "Will Be Closed", "Liste alinamadi...");
             }
+
+
+
+
             if(expectedCount>1) {
                 KisiSec("Will Be Closed",2);
             } else {
                 KisiSec("Will Be Closed",1);
             }
+
             goHome("Will Be Closed");
             updatedButton();
             sayiyiAlveSec();
@@ -54,6 +61,7 @@ public class willBeClosed extends geovisionGroupUpdated {
             } else {
                 KisiSec("Will Be Closed",1);
             }
+
             try {
                 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
                 MobileElement continueB = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[1]/android.widget.TextView");
@@ -85,231 +93,6 @@ public class willBeClosed extends geovisionGroupUpdated {
 
 
     }
-
-
-
-
-
-
-        /*updatedButton();
-        try {
-            int expectedCount = init();
-            if(expectedCount>0) {
-                try {
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                    MobileElement listeScrollview = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
-
-                    int count = ListeyiSay("Will Be Closed", listeScrollview);
-                    if (expectedCount == count) {
-                        Reports.report("OK", "Liste", "Beklenen eleman sayısı(" + expectedCount + ") ile listedeki eleman sayısı(" + count + ") aynı...");
-                    } else {
-                        Reports.report("NotMatching", "Liste", "Beklenen eleman sayısı(" + expectedCount + ") ile listedeki eleman sayısı(" + count + ") farklı...");
-                    }
-                } catch (NoSuchElementException e) {
-                    Reports.report("NoElement", "Will Be Closed", "Liste bulunamadı...");
-                }
-
-                KisiSec("Will Be Closed", 1);
-                goHome();
-                updatedButton();
-                init();
-                KisiSec("Will Be Closed",1);
-                try {
-                    try {
-                        TimeUnit.SECONDS.sleep(2);
-
-                    } catch (InterruptedException e) {
-
-                    }
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                    MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View[1]/android.view.View/android.widget.TextView");
-                    el4.click();
-                    Reports.report("OK", "Info", "Info butonu bulundu tıklandı...");
-                } catch (NoSuchElementException e) {
-                    Reports.report("NoElement", "Info", "Info butonu bulunamadı...");
-                }
-
-                try {
-                    try {
-                        TimeUnit.SECONDS.sleep(2);
-
-                    } catch (InterruptedException e) {
-
-                    }
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                    MobileElement el5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View");
-                    el5.click();        //Icerdeki info OK buton
-                    Reports.report("OK", "Info", "OK butonu bulundu tıklandı...");
-                } catch (NoSuchElementException e) {
-                    //Reports.report("NoElement", "Info", "OK butonu bulunamadı...");
-                }
-
-
-                try {
-                    try {
-                        TimeUnit.SECONDS.sleep(2);
-
-                    } catch (InterruptedException e) {
-
-                    }
-                    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-                    MobileElement continueB = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[1]/android.widget.TextView");
-                    if (continueButonu(continueB)) {
-                        icerdekiButonlariTestEt("Will Be Closed");
-                    } else {
-                        try {
-                            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-                            MobileElement homePage = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.widget.TextView");
-                            homePage.click();
-                            Reports.report("OK", "Will Be Closed", "Home page butonu bulundu tıklandı...");
-                            checkifLoading("Will Be Closed");
-                            //driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-                            updatedButton();
-                        } catch (NoSuchElementException e) {
-                            Reports.report("NoElement", "Will Be Closed", "Home page butonu bulunamadı...");
-                        }
-                    }
-
-                    //Reports.report("OK","Map","Continue butonu bulundu tıklandı...");
-                } catch (NoSuchElementException e) {
-                    Reports.report("NoElement", "Map", "Continue butonu bulunamadı...");
-                }
-
-                init();
-                KisiSec("Will Be Closed", 1);
-
-                try {
-                    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-                    MobileElement continueB = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[1]/android.widget.TextView");
-                    if(continueButonu(continueB)) {
-                        try {
-                            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                            MobileElement silinsinmiYes = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[3]");
-                            silinsinmiYes.click();
-                            Reports.report("OK", "AskForCancel", "Yes butonu bulundu tıklandı...");
-                            try {
-                                try {
-                                    TimeUnit.SECONDS.sleep(2);
-
-                                } catch (InterruptedException e) {
-
-                                }
-                                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                                MobileElement warningOk = (MobileElement) driver.findElementById("android:id/button1");
-                                warningOk.click();
-                                Reports.report("OK", "Warning", "OK(warning) butonu bulundu tıklandı...");
-                            } catch (NoSuchElementException ex) {
-                                Reports.report("NoElement", "Warning", "OK(warning) butonu bulunamadı...");
-                            }
-                        } catch (NoSuchElementException e) {
-                            Reports.report("NoElement", "AskForCancel", "Yes butonu bulunamadı...");
-                        }
-
-                        try {
-                            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                            MobileElement silinsinmiNo = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[4]");
-                            silinsinmiNo.click();
-                            Reports.report("OK", "AskForCancel", "No butonu bulundu tıklandı...");
-                            try {
-                                try{
-                                    TimeUnit.SECONDS.sleep(2);
-                                }catch (InterruptedException e) {
-
-                                }
-                                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                                MobileElement fotoEkleme = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[3]");
-                                fotoEkleme.click();
-                                Reports.report("OK","Foto","Fotograf ekleme butonu bulundu tıklandı...");
-                                Foto2();
-                                try {
-                                    try{
-                                        TimeUnit.SECONDS.sleep(5);
-
-                                    }catch (InterruptedException e) {
-
-                                    }
-                                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                                    MobileElement saveButonu = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[4]/android.view.View");
-                                    saveButonu.click();
-                                    Reports.report("OK","Foto","Save butonu bulundu tıklandı...");
-                                    try {
-                                        try{
-                                            TimeUnit.SECONDS.sleep(2);
-
-                                        }catch (InterruptedException e) {
-
-                                        }
-                                        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                                        MobileElement fotoEkleme2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[3]");
-                                        fotoEkleme2.click();
-                                        Reports.report("OK","Foto","Fotograf ekleme butonu bulundu tıklandı...");
-                                        Foto2();
-                                        try {
-                                            try{
-                                                TimeUnit.SECONDS.sleep(5);
-
-                                            }catch (InterruptedException e) {
-
-                                            }
-                                            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                                            MobileElement saveButonu2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[4]/android.view.View");
-                                            saveButonu2.click();
-                                            Reports.report("OK","Foto","Save butonu bulundu tıklandı...");
-                                            try {
-                                                MobileElement requestInfoText = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView");
-                                                if(requestInfoText.getText().equals("Your request has been received. It will be controlled as soon as possible. You can follow it on pending approvals or on the rejected menus")) {
-                                                    MobileElement requestInfoOk = (MobileElement) driver.findElementById("android:id/button1");
-                                                    requestInfoOk.click();
-                                                    Reports.report("OK","RequestInfo","Info text dogru onaylandı...");
-                                                } else {
-                                                    Reports.report("NoElement","RequestInfo","Info text farklı...");
-                                                }
-                                            }catch (NoSuchElementException e) {
-
-                                            }
-                                        }catch (NoSuchElementException e) {
-                                            Reports.report("NoElement","Foto","Save butonu bulunamadı...");
-                                        }
-                                    }catch (NoSuchElementException e) {
-                                        Reports.report("NoElement","Foto","Fotograf ekleme butonu bulunamadı...");
-                                    }
-                                }catch (NoSuchElementException e) {
-                                    Reports.report("NoElement","Foto","Save butonu bulunamadı...");
-                                }
-                            }catch (NoSuchElementException e) {
-                                Reports.report("NoElement","Foto","Fotograf ekleme butonu bulunamadı...");
-                            }
-                        } catch (NoSuchElementException e) {
-                            Reports.report("NoElement", "AskForCancel", "No butonu bulunamadı...");
-                        }
-                    }else {
-                        goHome();
-                    }
-                } catch (NoSuchElementException e) {
-                    Reports.report("NoElement", "Map", "Continue butonu bulunamadı...");
-                }
-
-
-
-
-            }
-        } catch (NoSuchElementException e) {
-            Reports.report("NoElement", "Geovision Group Updated", "Will Be Closed butonu ekranda mevcut değil...");
-        }
-        }*/
-
-
-    /*public void goHome() {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            MobileElement homePage = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.widget.TextView");
-            homePage.click();
-            Reports.report("OK","Will Be Closed","Home page butonu bulundu tıklandı...");
-            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-        } catch (NoSuchElementException e) {
-            Reports.report("NoElement","Will Be Closed","Home page butonu bulunamadı...");
-        }
-    }*/
 
     public int sayiyiAlveSec () {
         try {
@@ -443,30 +226,3 @@ public class willBeClosed extends geovisionGroupUpdated {
 
 }
 
-
-        /*if (willBeClosedText.getText().equals("0")) {
-            willBeClosedButton.click();
-            Reports.report("OK", "Geovision Group Updated", "Will Be Closed butonu ekranda mevcut. Butona tıklandı ...");
-            infoText();
-        } else {
-            expectedCount = Integer.parseInt(willBeClosedText.getText());
-            //System.out.println(expectedCount);
-            willBeClosedButton.click();
-            Reports.report("OK", "Geovision Group Updated", "Will Be Closed butonu ekranda mevcut. Butona tıklandı ...");
-            try {
-                TimeUnit.SECONDS.sleep(2);
-
-            } catch (InterruptedException e) {
-
-            }
-            try {
-                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                MobileElement onayButonu = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button");
-                onayButonu.click();
-            } catch (NoSuchElementException e) {
-
-            }
-        }
-        return expectedCount;
-
-    }*/

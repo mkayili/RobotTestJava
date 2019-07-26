@@ -1,5 +1,5 @@
 package InitTest;
-
+import Modules.HomePage.CustomerUpdates.customerUpdates;
 import Modules.HomePage.GeovisionGroupUpdated.geovisionGroupUpdated;
 import Modules.LoginPage.Login;
 import Modules.SideBar.SideBar;
@@ -27,10 +27,12 @@ public class test{
         testCount++;
         Login login = new Login(drv.getAndroidDriver());
         geovisionGroupUpdated update = new geovisionGroupUpdated(drv.getAndroidDriver());
+        customerUpdates customerUpdates = new customerUpdates(drv.getAndroidDriver());
         SideBar bar = new SideBar(drv.getAndroidDriver(),username, password);
-        login.forgotPasswordTest();
+        //login.forgotPasswordTest();
         login.userLoginProcess(username,password);
-        update.runTest();
+        customerUpdates.runTest();
+        //update.runTest();
         //bar.testMenu();
         Reports.report("--------------------","----------"+testCount+". test bitti(basarili)---------","--------------------");
     }
