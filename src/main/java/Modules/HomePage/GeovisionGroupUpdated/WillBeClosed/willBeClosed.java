@@ -3,12 +3,9 @@ package Modules.HomePage.GeovisionGroupUpdated.WillBeClosed;
 import Modules.HomePage.GeovisionGroupUpdated.geovisionGroupUpdated;
 import Report.Reports;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.Point;
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +18,6 @@ public class willBeClosed extends geovisionGroupUpdated {
     }
 
     public void runTest() {
-        updatedButton();
         int expectedCount = sayiyiAlveSec();
         if(expectedCount == 0) {
             Reports.report("OK", "Geovision Group Updated", "Will Be Closed butonu ekranda mevcut. Butona tıklandı ...");
@@ -30,8 +26,6 @@ public class willBeClosed extends geovisionGroupUpdated {
         else if(expectedCount>0) {
             Reports.report("OK", "Geovision Group Updated", "Will Be Closed butonu ekranda mevcut. Butona tıklandı ...");
             try {
-
-
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 MobileElement listeScrollview = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
                 int count = ListeyiSay("Will Be Closed", listeScrollview);
@@ -43,16 +37,11 @@ public class willBeClosed extends geovisionGroupUpdated {
             } catch (NoSuchElementException e) {
                 Reports.report("NoElement", "Will Be Closed", "Liste alinamadi...");
             }
-
-
-
-
             if(expectedCount>1) {
                 KisiSec("Will Be Closed",2);
             } else {
                 KisiSec("Will Be Closed",1);
             }
-
             goHome("Will Be Closed");
             updatedButton();
             sayiyiAlveSec();
@@ -61,7 +50,6 @@ public class willBeClosed extends geovisionGroupUpdated {
             } else {
                 KisiSec("Will Be Closed",1);
             }
-
             try {
                 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
                 MobileElement continueB = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[1]/android.widget.TextView");
@@ -90,9 +78,11 @@ public class willBeClosed extends geovisionGroupUpdated {
                 Reports.report("NoElement","Will Be Closed","Continue butonu bulunamadi...");
             }
         }
+        //goMainPage();
 
 
     }
+
 
     public int sayiyiAlveSec () {
         try {

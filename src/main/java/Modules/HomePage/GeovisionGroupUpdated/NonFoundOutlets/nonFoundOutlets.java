@@ -23,8 +23,15 @@ public class nonFoundOutlets extends geovisionGroupUpdated {
     }
 
     public void runTest() {
-        updatedButton();
+        //updatedButton();
         int expectedCount = sayiyiAlveSec();
+        try {
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            MobileElement el = (MobileElement) driver.findElementById("android:id/button1");
+            el.click();
+        } catch (NoSuchElementException e) {
+
+        }
         if (expectedCount == 0) {
             Reports.report("OK", "Geovision Group Updated", "Non Found Outlets butonu ekranda mevcut. Butona tıklandı ...");
             infoText();
@@ -162,86 +169,14 @@ public class nonFoundOutlets extends geovisionGroupUpdated {
                 }
 
 
-
-               /* if (continueButonu(continueB)) {
-                    //icerdekiButonlariTestEt("Non Found Outlets");
-                } else {
-                    goHome("Non Found Outlets");
-                    updatedButton();
-                }
-                sayiyiAlveSec();
-                if (expectedCount > 1) {
-                    KisiSec("Non Found Outlets", 2);
-                } else {
-                    KisiSec("Non Found Outlets", 1);
-                }
-
-                if (continueButonu(continueB)) {
-                    //willBeClosedTest(); sometest
-                } else {
-                    goHome("Non Found Outlets");
-                    updatedButton();
-                }*/
-
             } catch (NoSuchElementException e) {
                 Reports.report("NoElement", "Non Found Outlets", "Continue butonu bulunamadi...");
             }
         }
-    }
-    public void noktaOlustur () {
-
+        //goMainPage();
     }
 
-
-
-
-        /*try {
-            TimeUnit.SECONDS.sleep(5);
-
-        } catch (InterruptedException e) {
-
-        }
-        MobileElement non_foundOutletsButton =null;
-        MobileElement non_foundOutletsText =null;
-        try {
-            non_foundOutletsButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]/android.view.View[4]");
-            non_foundOutletsText = (MobileElement)driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]/android.view.View[4]/android.widget.TextView[1]");
-        }catch (NoSuchElementException e) {
-            try{
-                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                non_foundOutletsButton = (MobileElement) driver.findElementByXPath(" /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.view.View[4]");
-                non_foundOutletsText = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.view.View[4]/android.widget.TextView[1]");
-
-            }catch (NoSuchElementException ex) {
-                Reports.report("OK", "geovisionGroupUpdated", "Information Update butonu ekranda mevcut degil ...");
-                return;
-            }
-        }
-        if(non_foundOutletsText.getText().equals("0")) {
-            non_foundOutletsButton.click();
-            Reports.report("OK","geovisionGroupUpdated","Non Found Outlets butonu ekranda mevcut. Butona tıklandı ...");
-            infoText();
-        } else {
-            int expectedCount = Integer.parseInt(non_foundOutletsText.getText());
-            non_foundOutletsButton.click();
-            Reports.report("OK", "geovisionGroupUpdated", "Non Found Outlets butonu ekranda mevcut. Butona tıklandı ...");
-            try {
-                TimeUnit.SECONDS.sleep(5);
-
-            } catch (InterruptedException e) {
-
-            }
-            try {
-                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                MobileElement onayButonu = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button");
-                onayButonu.click();
-            } catch (NoSuchElementException e) {
-
-            }
-        }*/
-
-
-        public int sayiyiAlveSec () {
+    public int sayiyiAlveSec () {
             try {
                 TimeUnit.SECONDS.sleep(5);
 
@@ -270,89 +205,7 @@ public class nonFoundOutlets extends geovisionGroupUpdated {
             return expectedCount;
         }
 
-        public void homeButtonTest () {
-            try {
-                try {
-                    TimeUnit.SECONDS.sleep(5);
-
-                } catch (InterruptedException e) {
-
-                }
-                MobileElement non_foundOutletsButton = null;
-                MobileElement non_foundOutletsText = null;
-                try {
-                    non_foundOutletsButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]/android.view.View[4]");
-                    non_foundOutletsText = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View[1]/android.view.View[4]/android.widget.TextView[1]");
-                } catch (NoSuchElementException e) {
-                    try {
-                        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                        non_foundOutletsButton = (MobileElement) driver.findElementByXPath(" /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.view.View[4]");
-                        non_foundOutletsText = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.view.View[4]/android.widget.TextView[1]");
-
-                    } catch (NoSuchElementException ex) {
-                        Reports.report("OK", "geovisionGroupUpdated", "Information Update butonu ekranda mevcut degil ...");
-                        return;
-                    }
-                }
-                if (non_foundOutletsText.getText().equals("0")) {
-                    non_foundOutletsButton.click();
-                    Reports.report("OK", "geovisionGroupUpdated", "Non Found Outlets butonu ekranda mevcut. Butona tıklandı ...");
-                    infoText();
-                } else {
-                    int expectedCount = Integer.parseInt(non_foundOutletsText.getText());
-                    non_foundOutletsButton.click();
-                    Reports.report("OK", "geovisionGroupUpdated", "Non Found Outlets butonu ekranda mevcut. Butona tıklandı ...");
-                    try {
-                        TimeUnit.SECONDS.sleep(5);
-
-                    } catch (InterruptedException e) {
-
-                    }
-                    try {
-                        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                        MobileElement onayButonu = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button");
-                        onayButonu.click();
-                    } catch (NoSuchElementException e) {
-
-                    }
-
-
-                    ///hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2] home button
-                    try {
-                        MobileElement scrollView = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
-                        int count = ListeyiSay("Non Found Outlets", scrollView);
-                        if (expectedCount == count) {
-                            Reports.report("OK", "Liste", "Beklenen eleman sayısı(" + expectedCount + ") ile listedeki eleman sayısı(" + count + ") aynı...");
-                        } else {
-                            Reports.report("NotMatching", "Liste", "Beklenen eleman sayısı(" + expectedCount + ") ile listedeki eleman sayısı(" + count + ") farklı...");
-                        }
-                    } catch (NoSuchElementException e) {
-                        Reports.report("NoElement", "Non Found Outlets", "Liste bulunamadı...");
-                    }
-                    try {
-                        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                        MobileElement homePage = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.widget.TextView");
-                        homePage.click();
-                        Reports.report("OK", "Non Found Outlets", "Home page butonu bulundu tıklandı...");
-                        driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-                    } catch (NoSuchElementException e) {
-                        Reports.report("NoElement", "Non Found Outlets", "Home page butonu bulunamadı...");
-                    }
-
-                    updatedButton();
-
-                }
-            } catch (NoSuchElementException e) {
-                Reports.report("NoElement", "geovisionGroupUpdated", "Non Found Outlets butonu ekranda mevcut değil...");
-            }
-        }
 
     }
 
 
-//mapteki nokta /android.view.View[@content-desc="Google Map"]/android.view.View
-//text          /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.widget.TextView
-
-//yes           /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]
-
-//no            /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]

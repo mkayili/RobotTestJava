@@ -26,30 +26,34 @@ public class activateOutlet extends customerUpdates{
         MobileElement listeScrollview = null;
         int count = 0;
         try {
-            customerUpdate();
+            //customerUpdate();
 
             selectActivate();
            // MobileElement listeScrollview = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
         }catch (NoSuchElementException e){
             Reports.report("NoElement", "Will Be Closed", "Liste alinamadi...");
         }
-        listeScrollview = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
-        int a = scrollElement("activateOutlet", 1, listeScrollview);
+        //listeScrollview = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
         goHome("activateOutlet");
         customerUpdate();
         selectActivate();
         try {
             listeScrollview = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.widget.ScrollView");
-            scrollElement("activateOutlet", a, listeScrollview);
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-            MobileElement continueB = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[1]/android.widget.TextView");
-            if(continueButonu(continueB)){
-                icerdekiButonlariTestEt("activateOutlet");
-                activateOutletTest();
+            if(scrollElement("activateOutlet", listeScrollview)) {
+                driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+                MobileElement continueB = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.support.v4.view.ViewPager/android.view.View/android.view.View[4]/android.widget.HorizontalScrollView/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[1]/android.widget.TextView");
+                if (continueButonu(continueB)) {
+                    icerdekiButonlariTestEt("activateOutlet");
+                    activateOutletTest();
+                } else {
+                    goHome("activateOutlet");
+                    customerUpdate();
+                }
             } else {
                 goHome("activateOutlet");
                 customerUpdate();
             }
+
         } catch (NoSuchElementException e) {
             Reports.report("NoElement", "CustomerUpdate", "xxxxxx");
         }
@@ -66,14 +70,14 @@ public class activateOutlet extends customerUpdates{
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             activateButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]\n");
             activateButton.click();
-            Reports.report("OK", "activate", "activateOutlet bulundu ve tıklandı");
+            Reports.report("OK", "activateOutlets", "activateOutlet bulundu ve tıklandı");
         } catch (NoSuchElementException e) {
             try{
                 activateButton = (MobileElement) driver.findElementByXPath(" /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[2]\n");
                 activateButton.click();
-                Reports.report("NoElement", "activate", "activateOutlet bulundu ve tıklandı");
+                Reports.report("OK", "activateOutlets", "activateOutlet bulundu ve tıklandı");
             }catch (NoSuchElementException e2) {
-                Reports.report("NoElement", "activate", "activateOutlet bulunamadı");
+                Reports.report("NoElement", "activateOutlets", "activateOutlet bulunamadı");
             }
         }
 
@@ -97,8 +101,6 @@ public class activateOutlet extends customerUpdates{
             Reports.report("NoElement", "activate", "activateOutletTest failed");
         }
 
-        Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
 
     }
 

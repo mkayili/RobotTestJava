@@ -91,8 +91,38 @@ public class Reports {
     }*/
     public static void report(String status, String page, String messsage){
 
-        String time = new SimpleDateFormat("[HH-mm-ss]").format(Calendar.getInstance().getTime());
-        String str = status+" - "+page+" - "+messsage;
+        String time = new SimpleDateFormat("[HH:mm:ss]").format(Calendar.getInstance().getTime());
+        char[] statusText = new char[20];
+        char[] pageText = new char[30];
+        int i = 20-status.length();
+        for(int k=0;k<i;k++) {
+            status = status + " ";
+        }
+
+        int j= 30-page.length();
+        for(int x=0;x<j;x++) {
+            page = page + " ";
+        }
+
+        /*while(i<status.length()) {
+            statusText[i] = status.charAt(i);
+            i++;
+        }
+        while (j<page.length()) {
+            pageText[j] = page.charAt(j);
+            j++;
+        }
+        while(i<statusText.length) {
+            statusText[i] = ' ';
+            i++;
+        }
+        while(j<pageText.length) {
+            pageText[j] = ' ';
+            j++;
+        }
+        String stat = String.copyValueOf(statusText);
+        String pge = String.copyValueOf(pageText);*/
+        String str = time + " - " + status + " - " + page + " - " + messsage;
         System.out.println(str);
         File file = new File(reportName);
         File file2 = new File("deneme12.txt");
