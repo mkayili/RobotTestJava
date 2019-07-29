@@ -66,7 +66,7 @@ public class activateOutlet extends customerUpdates{
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             activateButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]\n");
             activateButton.click();
-            Reports.report("NoElement", "activate", "activateOutlet bulundu ve tıklandı");
+            Reports.report("OK", "activate", "activateOutlet bulundu ve tıklandı");
         } catch (NoSuchElementException e) {
             try{
                 activateButton = (MobileElement) driver.findElementByXPath(" /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[2]\n");
