@@ -10,6 +10,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-appium-java4:4.0.8" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-common-java4:4.0.8" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-sdk-core-java4:4.0.8" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-connectivity-java4-jersey2x:4.0.8" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-selenium-java4:4.0.8" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.5.1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.5.1" level="project" />
     <orderEntry type="library" name="Maven: io.appium:java-client:7.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-support:3.141.59" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-remote-driver:3.141.59" level="project" />

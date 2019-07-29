@@ -31,9 +31,9 @@ public class test{
         geovisionGroupUpdated update = new geovisionGroupUpdated(drv.getAndroidDriver());
         SideBar bar = new SideBar(drv.getAndroidDriver(),username, password);
         customerUpdates customerUpdates = new customerUpdates(drv.getAndroidDriver());
-        //login.forgotPasswordTest();
+        login.forgotPasswordTest();
         login.userLoginProcess(username,password);
-        //update.runTest();
+        update.runTest();
         customerUpdates.runTest();
         bar.testMenu();
 

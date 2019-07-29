@@ -18,6 +18,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 
 import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class customerUpdates {
@@ -51,7 +53,6 @@ public class customerUpdates {
         //newOutlet.runTest();
 
         goMainPage();
-
     }
 
     public void infoText() {
@@ -241,16 +242,23 @@ public class customerUpdates {
     public void goMainPage() {
         try {
             try {
-                TimeUnit.SECONDS.sleep(20);
+                Thread.sleep(5000);
 
-            } catch (InterruptedException e) {
+            }catch (Exception e){
 
             }
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            /*
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            List<MobileElement> textViews=driver.findElementsByXPath("//*[@class='android.widget.TextView']");
+            MobileElement backButton = textViews.get(1);
+            backButton.click();
+*/
+
+
+
+
             MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.view.View");
-
             el1.click();
-
 
 
             Reports.report("OK","Customer Updates","Mainpage butonu bulundu, tiklandi...");
@@ -258,7 +266,7 @@ public class customerUpdates {
             try {
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.view.View/android.widget.TextView[2]");
-                el1.click();                                                         //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.view.View/android.widget.TextView[2]
+                el1.click();
 
                 Reports.report("OK","Customer Updates","Mainpage butonu bulundu, tiklandi...");
             }catch (NoSuchElementException ex) {
