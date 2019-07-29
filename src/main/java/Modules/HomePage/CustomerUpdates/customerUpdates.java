@@ -256,8 +256,10 @@ public class customerUpdates {
 
 
 
-
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.view.View");
+
+
             el1.click();
 
 
@@ -265,7 +267,7 @@ public class customerUpdates {
         } catch (NoSuchElementException e) {
             try {
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.support.v4.widget.DrawerLayout/android.view.View/android.view.View/android.view.View/android.widget.TextView[2]");
+                MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.view.View");
                 el1.click();
 
                 Reports.report("OK","Customer Updates","Mainpage butonu bulundu, tiklandi...");

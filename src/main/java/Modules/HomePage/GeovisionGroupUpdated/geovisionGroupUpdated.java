@@ -35,9 +35,9 @@ public class geovisionGroupUpdated {
         nonFoundOutlets nonFoundOutletsTest = new nonFoundOutlets(driver);
         updatedButton();
         willBeClosedTest.runTest();
-        updatedButton();
+        //updatedButton();
         informationUpdateTest.runTest();
-        updatedButton();
+        //updatedButton();
         nonFoundOutletsTest.runTest();
         goMainPage();
 

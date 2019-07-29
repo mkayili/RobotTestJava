@@ -38,9 +38,9 @@ public class informationUpdate extends geovisionGroupUpdated {
             } catch (NoSuchElementException e) {
                 Reports.report("NoElement","Information Update","Liste alinamadi...");
             }
-            int random;
-            Random rn = new Random();
-            random = rn.nextInt(count)+1;
+            //int random;
+            //Random rn = new Random();
+            //random = rn.nextInt(count)+1;
             //(random%4)+1
             KisiSec("Information Update",2);
             goHome("Information Update");
